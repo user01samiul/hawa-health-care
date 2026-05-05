@@ -158,11 +158,6 @@ export default function Services() {
                 </span>
 
                 <div className="absolute inset-x-0 bottom-0 flex flex-col p-6 text-foreground-inverse md:p-7">
-                  <span
-                    aria-hidden
-                    className="mb-4 block h-[2px] w-9 rounded-full bg-secondary transition-[width] duration-[var(--duration-base)] group-hover:w-16"
-                  />
-
                   <h3 className="text-[1.3rem] font-semibold leading-tight tracking-tight md:text-2xl">
                     {s.name}
                   </h3>
@@ -171,13 +166,7 @@ export default function Services() {
                   </p>
 
                   <span className="mt-5 inline-flex items-center gap-2.5 text-sm font-semibold text-foreground-inverse">
-                    <span className="relative">
-                      Learn more
-                      <span
-                        aria-hidden
-                        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-secondary transition-transform duration-[var(--duration-base)] group-hover:scale-x-100"
-                      />
-                    </span>
+                    Learn more
                     <span
                       aria-hidden
                       className="grid h-8 w-8 place-items-center rounded-[var(--radius-pill)] bg-secondary text-foreground-inverse shadow-[var(--shadow-sm)] transition-transform duration-[var(--duration-base)] group-hover:translate-x-1"
