@@ -2,7 +2,7 @@ export default function Loading() {
   return (
     <section
       aria-label="Loading"
-      className="grid min-h-screen place-items-center bg-background"
+      className="fixed inset-0 z-[100] grid min-h-svh place-items-center bg-background"
     >
       <div className="relative grid h-16 w-16 place-items-center">
         <span className="absolute inset-0 animate-ping rounded-[var(--radius-pill)] bg-secondary/20" />
