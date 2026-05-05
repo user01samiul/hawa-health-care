@@ -69,9 +69,8 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-white/85 drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
-            Participant-centred NDIS support across Western Sydney — fast
-            onboarding and plans built around your goals.
+          <p className="mt-5 max-w-sm text-base leading-7 text-white/80 drop-shadow-[0_1px_5px_rgba(0,0,0,0.4)] sm:mt-6 sm:max-w-xl sm:text-lg sm:font-normal sm:leading-relaxed sm:text-foreground-muted sm:drop-shadow-none">
+            Fast NDIS support across Western Sydney, shaped around your goals.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -95,13 +94,13 @@ export default function Hero() {
             </Link>
             <Link
               href="/referrals"
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/40 bg-white/10 px-6 py-3.5 text-base font-semibold text-foreground-inverse backdrop-blur transition-colors duration-[var(--duration-fast)] hover:bg-white/20 sm:border-border-strong sm:bg-background sm:text-foreground sm:backdrop-blur-none sm:hover:border-primary sm:hover:bg-background sm:hover:text-primary"
+              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/45 bg-white/25 px-6 py-3.5 text-base font-semibold text-foreground-inverse shadow-[var(--shadow-md)] backdrop-blur-md transition-colors duration-[var(--duration-fast)] hover:bg-white/35 sm:border-border-strong sm:bg-background sm:text-foreground sm:shadow-none sm:backdrop-blur-none sm:hover:border-primary sm:hover:bg-background sm:hover:text-primary"
             >
               Make a Referral
             </Link>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-medium text-white/80 drop-shadow-[0_1px_4px_rgba(7,39,60,0.5)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
+          <ul className="mt-8 hidden flex-wrap gap-x-5 gap-y-2.5 text-sm font-normal text-foreground-muted sm:flex">
             {TRUST_POINTS.map((point) => (
               <li key={point} className="inline-flex items-center gap-2">
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-secondary-soft text-secondary">
