@@ -77,7 +77,7 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-foreground sm:font-normal sm:text-foreground-muted">
+          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-foreground/80 sm:font-normal sm:text-foreground-muted">
             Participant-centred NDIS support across Western Sydney — fast
             onboarding and plans built around your goals.
           </p>
