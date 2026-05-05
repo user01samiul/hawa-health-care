@@ -109,7 +109,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-semibold text-foreground sm:font-normal sm:text-foreground-muted">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-semibold text-foreground-inverse drop-shadow-[0_1px_4px_rgba(7,39,60,0.55)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
             {TRUST_POINTS.map((point) => (
               <li key={point} className="inline-flex items-center gap-2">
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-secondary-soft text-secondary">
