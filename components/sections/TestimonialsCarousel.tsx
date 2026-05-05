@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import TestimonialCard, { type Testimonial } from "@/components/sections/TestimonialCard";
 
 type Props = {
@@ -9,32 +9,53 @@ type Props = {
 };
 
 export default function TestimonialsCarousel({ items, intervalMs = 5500 }: Props) {
+  const [perView, setPerView] = useState(1);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reducedMotion = useRef(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    reducedMotion.current = mq.matches;
-    const onChange = () => {
-      reducedMotion.current = mq.matches;
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const syncPerView = () => setPerView(desktop.matches ? 3 : 1);
+    const syncMotion = () => {
+      reducedMotion.current = motion.matches;
     };
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+
+    syncPerView();
+    syncMotion();
+    desktop.addEventListener("change", syncPerView);
+    motion.addEventListener("change", syncMotion);
+    return () => {
+      desktop.removeEventListener("change", syncPerView);
+      motion.removeEventListener("change", syncMotion);
+    };
   }, []);
 
+  const maxIndex = Math.max(0, items.length - perView);
+  const slideCount = maxIndex + 1;
+
   useEffect(() => {
-    if (paused || reducedMotion.current || items.length < 2) return;
+    if (index > maxIndex) setIndex(maxIndex);
+  }, [maxIndex, index]);
+
+  useEffect(() => {
+    if (paused || reducedMotion.current || slideCount < 2) return;
     const id = window.setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
+      setIndex((i) => (i + 1) % slideCount);
     }, intervalMs);
     return () => window.clearInterval(id);
-  }, [paused, items.length, intervalMs]);
+  }, [paused, slideCount, intervalMs]);
 
   const go = (next: number) => {
-    const len = items.length;
-    setIndex(((next % len) + len) % len);
+    setIndex(((next % slideCount) + slideCount) % slideCount);
   };
+
+  const offsetPercent = useMemo(
+    () => index * (100 / perView),
+    [index, perView],
+  );
 
   return (
     <div
@@ -51,26 +72,29 @@ export default function TestimonialsCarousel({ items, intervalMs = 5500 }: Props
         <ul
           aria-live="polite"
           className="flex transition-transform duration-[var(--duration-slow)] ease-[var(--ease-out)]"
-          style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}
+          style={{ transform: `translate3d(-${offsetPercent}%, 0, 0)` }}
         >
-          {items.map((t, i) => (
-            <li
-              key={t.name}
-              className="w-full shrink-0 px-1"
-              aria-roledescription="slide"
-              aria-label={`${i + 1} of ${items.length}`}
-              aria-hidden={i !== index}
-            >
-              <TestimonialCard testimonial={t} />
-            </li>
-          ))}
+          {items.map((t, i) => {
+            const visible = i >= index && i < index + perView;
+            return (
+              <li
+                key={t.name}
+                className="w-full shrink-0 px-2.5 md:w-1/3"
+                aria-roledescription="slide"
+                aria-label={`${i + 1} of ${items.length}`}
+                aria-hidden={!visible}
+              >
+                <TestimonialCard testimonial={t} />
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      <div className="mt-7 flex items-center justify-center gap-4">
+      <div className="mt-8 flex items-center justify-center gap-4">
         <button
           type="button"
-          aria-label="Previous testimonial"
+          aria-label="Previous"
           onClick={() => go(index - 1)}
           className="grid h-10 w-10 place-items-center rounded-[var(--radius-pill)] border border-border bg-background text-foreground transition-colors hover:border-primary hover:text-primary"
         >
@@ -81,11 +105,11 @@ export default function TestimonialsCarousel({ items, intervalMs = 5500 }: Props
         </button>
 
         <ul className="flex items-center gap-2">
-          {items.map((t, i) => (
-            <li key={t.name}>
+          {Array.from({ length: slideCount }).map((_, i) => (
+            <li key={i}>
               <button
                 type="button"
-                aria-label={`Go to testimonial ${i + 1}`}
+                aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === index ? "true" : undefined}
                 onClick={() => go(i)}
                 className={`h-2 rounded-full transition-[width,background-color] duration-[var(--duration-base)] ${
@@ -98,7 +122,7 @@ export default function TestimonialsCarousel({ items, intervalMs = 5500 }: Props
 
         <button
           type="button"
-          aria-label="Next testimonial"
+          aria-label="Next"
           onClick={() => go(index + 1)}
           className="grid h-10 w-10 place-items-center rounded-[var(--radius-pill)] border border-border bg-background text-foreground transition-colors hover:border-primary hover:text-primary"
         >

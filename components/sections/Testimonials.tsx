@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import TestimonialCard from "@/components/sections/TestimonialCard";
 import TestimonialsCarousel from "@/components/sections/TestimonialsCarousel";
 
 const TESTIMONIALS = [
@@ -28,6 +27,30 @@ const TESTIMONIALS = [
     initials: "DR",
     accent: "primary",
   },
+  {
+    quote:
+      "Communication is honest and consistent. Notes after every shift, a real person on the phone — that's been the difference for our family.",
+    name: "Priya N.",
+    role: "Family member",
+    initials: "PN",
+    accent: "secondary",
+  },
+  {
+    quote:
+      "Respite arranged inside 24 hours when I was at the end of my rope. Worker was matched well, handover was clean, and I could finally breathe.",
+    name: "Marcus T.",
+    role: "Primary carer",
+    initials: "MT",
+    accent: "primary",
+  },
+  {
+    quote:
+      "I've placed several clients with Hawa. Onboarding is fast, paperwork is tidy, and they actually flag risks early — coordinator gold.",
+    name: "Aisha O.",
+    role: "Support coordinator",
+    initials: "AO",
+    accent: "secondary",
+  },
 ] as const;
 
 export default function Testimonials() {
@@ -50,17 +73,7 @@ export default function Testimonials() {
           className="mb-14"
         />
 
-        <div className="mx-auto max-w-md md:hidden">
-          <TestimonialsCarousel items={TESTIMONIALS} />
-        </div>
-
-        <ul className="hidden gap-5 md:grid md:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <li key={t.name}>
-              <TestimonialCard testimonial={t} />
-            </li>
-          ))}
-        </ul>
+        <TestimonialsCarousel items={TESTIMONIALS} />
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground-subtle">
           <span>NDIS Registered</span>
