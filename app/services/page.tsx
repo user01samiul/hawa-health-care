@@ -30,46 +30,41 @@ export default function ServicesPage() {
 
       <section className="py-20 md:py-28">
         <Container>
-          <ul className="grid gap-6 md:grid-cols-2">
+          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
                   className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-border bg-background shadow-[var(--shadow-xs)] transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={s.image}
                       alt=""
                       fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-[700ms] group-hover:scale-[1.04]"
-                      priority={i < 2}
+                      priority={i < 3}
                     />
-                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-foreground/55 via-foreground/15 to-transparent" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-foreground/45 via-foreground/10 to-transparent" />
                     {s.focus ? (
-                      <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] bg-secondary px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-foreground-inverse shadow-[var(--shadow-sm)]">
+                      <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] bg-secondary px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground-inverse shadow-[var(--shadow-sm)]">
                         <span className="h-1.5 w-1.5 rounded-full bg-foreground-inverse" />
                         Focus service
                       </span>
                     ) : null}
                   </div>
 
-                  <div className="flex flex-1 flex-col p-7">
-                    <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="text-lg font-semibold leading-tight tracking-tight text-foreground">
                       {s.name}
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-foreground-muted md:text-base">
-                      {s.description}
+                    <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-foreground-muted">
+                      {s.blurb}
                     </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                       Learn more
-                      <span aria-hidden className="grid h-7 w-7 place-items-center rounded-[var(--radius-pill)] bg-primary text-foreground-inverse transition-transform duration-[var(--duration-base)] group-hover:translate-x-1">
-                        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14" />
-                          <path d="m13 5 7 7-7 7" />
-                        </svg>
-                      </span>
+                      <span aria-hidden className="transition-transform duration-[var(--duration-base)] group-hover:translate-x-1">→</span>
                     </span>
                   </div>
                 </Link>
