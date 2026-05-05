@@ -120,54 +120,67 @@ export default function Services() {
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-foreground shadow-[var(--shadow-sm)] transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1"
+                className="group relative block aspect-[7/8] overflow-hidden rounded-[var(--radius-lg)] bg-foreground shadow-[var(--shadow-sm)] ring-1 ring-foreground/5 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1"
               >
                 <Image
                   src={s.image}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-[700ms] ease-[var(--ease-out)] group-hover:scale-[1.06]"
+                  className="object-cover transition-transform duration-[900ms] ease-[var(--ease-out)] group-hover:scale-[1.05]"
                 />
 
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/55 to-foreground/10"
+                  className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-foreground/55 via-foreground/15 to-transparent"
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-transparent opacity-0 transition-opacity duration-[var(--duration-slow)] group-hover:opacity-100"
+                  className="absolute inset-0 bg-gradient-to-t from-foreground from-5% via-foreground/70 via-45% to-transparent to-80%"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-tr from-primary/35 via-transparent to-transparent opacity-0 transition-opacity duration-[var(--duration-slow)] group-hover:opacity-100"
+                />
+
+                <div
+                  aria-hidden
+                  className="absolute inset-0 rounded-[var(--radius-lg)] ring-1 ring-inset ring-white/0 transition-[box-shadow] duration-[var(--duration-base)] group-hover:ring-white/15"
                 />
 
                 <span
                   aria-hidden
-                  className="absolute left-5 top-5 grid h-11 w-11 place-items-center rounded-[var(--radius-md)] bg-background/95 text-primary shadow-[var(--shadow-sm)] backdrop-blur transition-colors duration-[var(--duration-base)] group-hover:bg-primary group-hover:text-foreground-inverse"
+                  className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-background/95 text-primary shadow-[var(--shadow-md)] ring-1 ring-white/40 backdrop-blur transition-[background,color,transform] duration-[var(--duration-base)] group-hover:scale-105 group-hover:bg-primary group-hover:text-foreground-inverse"
                 >
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     {s.icon}
                   </svg>
                 </span>
 
-                <span
-                  aria-hidden
-                  className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-white/25 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground-inverse backdrop-blur"
-                >
-                  NDIS
-                </span>
+                <div className="absolute inset-x-0 bottom-0 flex flex-col p-6 text-foreground-inverse md:p-7">
+                  <span
+                    aria-hidden
+                    className="mb-4 block h-[2px] w-9 rounded-full bg-secondary transition-[width] duration-[var(--duration-base)] group-hover:w-16"
+                  />
 
-                <div className="absolute inset-x-0 bottom-0 flex flex-col p-5 text-foreground-inverse md:p-6">
-                  <h3 className="text-xl font-semibold tracking-tight">
+                  <h3 className="text-[1.3rem] font-semibold leading-tight tracking-tight md:text-2xl">
                     {s.name}
                   </h3>
-                  <p className="mt-1.5 max-w-[26ch] text-sm leading-relaxed text-white/85">
+                  <p className="mt-2 max-w-[28ch] text-sm leading-relaxed text-white/85">
                     {s.blurb}
                   </p>
 
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground-inverse">
-                    Learn more
+                  <span className="mt-5 inline-flex items-center gap-2.5 text-sm font-semibold text-foreground-inverse">
+                    <span className="relative">
+                      Learn more
+                      <span
+                        aria-hidden
+                        className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-secondary transition-transform duration-[var(--duration-base)] group-hover:scale-x-100"
+                      />
+                    </span>
                     <span
                       aria-hidden
-                      className="grid h-7 w-7 place-items-center rounded-[var(--radius-pill)] bg-white/15 text-foreground-inverse transition-[transform,background] duration-[var(--duration-base)] group-hover:translate-x-0.5 group-hover:bg-secondary"
+                      className="grid h-8 w-8 place-items-center rounded-[var(--radius-pill)] bg-secondary text-foreground-inverse shadow-[var(--shadow-sm)] transition-transform duration-[var(--duration-base)] group-hover:translate-x-1"
                     >
                       <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14" />
