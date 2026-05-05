@@ -25,7 +25,7 @@ export default function Hero() {
 
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-0% via-background via-65% to-background/35 to-100% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-0% via-background/55 via-45% to-background/10 to-100% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
       />
       <div
         aria-hidden
