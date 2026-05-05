@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
@@ -17,6 +18,10 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,16 +52,24 @@ export default function Navbar() {
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="inline-flex items-center rounded-[var(--radius-sm)] px-4 py-2 text-base font-medium text-foreground-muted transition-colors duration-[var(--duration-fast)] hover:bg-surface hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`inline-flex items-center rounded-[var(--radius-sm)] px-4 py-2 text-base font-medium transition-colors duration-[var(--duration-fast)] ${
+                      active
+                        ? "bg-primary-soft text-primary"
+                        : "text-foreground-muted hover:bg-surface hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -138,17 +151,25 @@ export default function Navbar() {
 
         <nav aria-label="Mobile primary" className="flex-1 overflow-y-auto px-4 py-5">
           <ul className="flex flex-col gap-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-[var(--radius-sm)] px-3 py-3 text-base font-medium text-foreground hover:bg-surface hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`block rounded-[var(--radius-sm)] px-3 py-3 text-base font-medium transition-colors ${
+                      active
+                        ? "bg-primary-soft text-primary"
+                        : "text-foreground hover:bg-surface hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
