@@ -87,6 +87,11 @@ export const metadata: Metadata = {
   },
   description:
     "Tailored, participant-centred NDIS support across Western Sydney. Same-day or next-day onboarding, 7+ years healthcare experience.",
+  icons: {
+    icon: "/logo/favicon.png",
+    shortcut: "/logo/favicon.png",
+    apple: "/logo/favicon.png",
+  },
 };
 
 export default function RootLayout({
