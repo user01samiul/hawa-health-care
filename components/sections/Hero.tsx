@@ -20,24 +20,24 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover object-[70%_center]"
+        className="-z-20 object-cover object-[75%_center]"
       />
 
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background/40 sm:bg-gradient-to-r sm:from-background sm:via-background/90 sm:to-background/0"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-10% via-background/55 via-55% to-background/15 to-95% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
       />
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 50% at 0% 0%, var(--brand-50) 0%, transparent 60%), radial-gradient(40% 35% at 100% 100%, rgba(15,103,145,0.18) 0%, transparent 65%)",
+            "radial-gradient(55% 45% at 0% 0%, var(--brand-50) 0%, transparent 65%)",
         }}
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-background to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-background to-transparent"
       />
 
       <Container className="grid w-full items-center gap-10 py-10 md:py-14 lg:grid-cols-12 lg:py-16">
