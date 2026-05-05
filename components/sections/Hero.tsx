@@ -42,17 +42,9 @@ export default function Hero() {
 
       <Container className="grid w-full items-center gap-10 py-10 md:py-14 lg:grid-cols-12 lg:py-16">
         <div className="lg:col-span-7 xl:col-span-6">
-          <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-foreground-inverse backdrop-blur sm:border-brand-100 sm:bg-primary-soft sm:text-primary sm:backdrop-blur-none">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inset-0 animate-ping rounded-full bg-secondary opacity-70 sm:bg-primary sm:opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary sm:bg-primary" />
-            </span>
-            Registered NDIS Support
-          </span>
-
           <h1
             id="hero-heading"
-            className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
+            className="text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
           >
             Fast, personalised{" "}
             <span className="relative inline-block text-secondary sm:text-primary">
