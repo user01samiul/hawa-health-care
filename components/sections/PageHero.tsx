@@ -23,7 +23,7 @@ export default function PageHero({
   image = "/senior-father-wheelchair-young-son-walk.jpg",
 }: PageHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden pb-20 pt-16 md:pb-28 md:pt-24">
+    <section className="relative isolate overflow-hidden rounded-br-[2rem] pb-20 pt-16 md:rounded-br-[4rem] md:pb-28 md:pt-24">
       <Image
         src={image}
         alt=""
