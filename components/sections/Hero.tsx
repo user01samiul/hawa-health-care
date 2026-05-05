@@ -12,19 +12,36 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-background"
+      className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden bg-background lg:min-h-[calc(100svh-5rem)]"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 0% 0%, var(--brand-50) 0%, transparent 60%), radial-gradient(45% 40% at 100% 100%, var(--accent-50) 0%, transparent 60%)",
-        }}
+      <Image
+        src="/senior-father-wheelchair-young-son-walk.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover object-[70%_center]"
       />
 
-      <Container className="grid items-center gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-10 lg:py-28">
-        <div className="lg:col-span-6">
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-background/85 to-background/40 sm:bg-gradient-to-r sm:from-background sm:via-background/90 sm:to-background/0"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 0% 0%, var(--brand-50) 0%, transparent 60%), radial-gradient(40% 35% at 100% 100%, rgba(15,103,145,0.18) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-background to-transparent"
+      />
+
+      <Container className="grid w-full items-center gap-10 py-10 md:py-14 lg:grid-cols-12 lg:py-16">
+        <div className="lg:col-span-7 xl:col-span-6">
           <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-brand-100 bg-primary-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
             <span className="relative flex h-2 w-2">
               <span className="absolute inset-0 animate-ping rounded-full bg-primary opacity-60" />
@@ -105,38 +122,21 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="relative lg:col-span-6">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] bg-surface shadow-[var(--shadow-lg)] sm:aspect-[5/4] lg:aspect-[4/5]">
-            <Image
-              src="/senior-father-wheelchair-young-son-walk.jpg"
-              alt="A support worker walking with an elderly client in a wheelchair, sharing a moment together."
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/45 to-transparent"
-            />
-          </div>
-
-          <div className="absolute -left-3 top-6 hidden rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur sm:block md:-left-6 md:p-5">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] bg-secondary-soft text-secondary">
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              </span>
-              <div className="leading-tight">
-                <p className="text-sm font-semibold text-foreground">Onboarded today</p>
-                <p className="text-xs text-foreground-subtle">No long wait times</p>
-              </div>
+        <div className="relative hidden lg:col-span-5 lg:col-start-8 lg:block xl:col-span-6 xl:col-start-7">
+          <div className="absolute right-0 top-4 inline-flex items-center gap-3 rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur md:p-5">
+            <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] bg-secondary-soft text-secondary">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </span>
+            <div className="leading-tight">
+              <p className="text-sm font-semibold text-foreground">Onboarded today</p>
+              <p className="text-xs text-foreground-subtle">No long wait times</p>
             </div>
           </div>
 
-          <div className="absolute -right-3 bottom-8 hidden rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur sm:block md:-right-6 md:p-5">
+          <div className="absolute bottom-6 right-12 rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur md:p-5">
             <p className="text-2xl font-bold leading-none text-primary">7+ yrs</p>
             <p className="mt-1 text-xs font-medium text-foreground-subtle">
               Healthcare experience
