@@ -25,7 +25,7 @@ export default function Hero() {
 
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-10% via-background/55 via-55% to-background/15 to-95% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-0% via-background via-65% to-background/35 to-100% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
       />
       <div
         aria-hidden
@@ -77,10 +77,9 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted">
-            Tailored, participant-centred care across Western Sydney. From
-            community participation to respite support — we onboard quickly,
-            communicate clearly, and build plans around your goals.
+          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-foreground sm:font-normal sm:text-foreground-muted">
+            Participant-centred NDIS support across Western Sydney — fast
+            onboarding and plans built around your goals.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -110,7 +109,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm text-foreground-muted">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-semibold text-foreground sm:font-normal sm:text-foreground-muted">
             {TRUST_POINTS.map((point) => (
               <li key={point} className="inline-flex items-center gap-2">
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-secondary-soft text-secondary">

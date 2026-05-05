@@ -1,13 +1,13 @@
-import Hero from "@/components/sections/Hero";
-import FastOnboarding from "@/components/sections/FastOnboarding";
 import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
 import EligibilityBanner from "@/components/sections/EligibilityBanner";
-import WhyUs from "@/components/sections/WhyUs";
-import WhoWeHelp from "@/components/sections/WhoWeHelp";
-import Referral from "@/components/sections/Referral";
-import Testimonials from "@/components/sections/Testimonials";
+import FastOnboarding from "@/components/sections/FastOnboarding";
 import FinalCta from "@/components/sections/FinalCta";
+import Hero from "@/components/sections/Hero";
+import Referral from "@/components/sections/Referral";
+import Services from "@/components/sections/Services";
+import Testimonials from "@/components/sections/Testimonials";
+import WhoWeHelp from "@/components/sections/WhoWeHelp";
+import WhyUs from "@/components/sections/WhyUs";
 
 export default function Home() {
   return (
