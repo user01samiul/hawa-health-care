@@ -47,8 +47,8 @@ export default function Referral() {
             <span className="text-secondary">this week</span>?
           </h2>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-brand-100 sm:text-lg">
-            Send us the basics and we'll get back within hours. If it's urgent,
-            we'll usually have a worker in place within 24 hours of the
+            Send us the basics and we&apos;ll get back within hours. If it&apos;s urgent,
+            we&apos;ll usually have a worker in place within 24 hours of the
             referral.
           </p>
 
@@ -145,7 +145,7 @@ export default function Referral() {
 
             <div className="mt-6 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-foreground-subtle">
-                We'll only use your details to respond to this referral.
+                We&apos;ll only use your details to respond to this referral.
               </p>
               <button
                 type="submit"

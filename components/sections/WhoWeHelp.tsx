@@ -72,7 +72,7 @@ export default function WhoWeHelp() {
               title={
                 <>
                   Built for everyone who shapes a{" "}
-                  <span className="text-primary">participant's plan</span>.
+                  <span className="text-primary">participant&apos;s plan</span>.
                 </>
               }
               subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf — we make your part easier."
