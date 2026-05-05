@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -7,6 +8,7 @@ const SERVICES = [
     slug: "daily-living-assistance",
     name: "Daily Living Assistance",
     blurb: "Hands-on help with everyday routines so days run smoothly.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <path d="M3 12 12 3l9 9" />
@@ -19,6 +21,7 @@ const SERVICES = [
     slug: "community-participation",
     name: "Community Participation",
     blurb: "Get out, stay social, and build the connections that matter.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <circle cx="9" cy="8" r="3" />
@@ -32,6 +35,7 @@ const SERVICES = [
     slug: "personal-care",
     name: "Personal Care",
     blurb: "Respectful, dignified support for showering, dressing and grooming.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <path d="M12 21s-7-4.35-7-10a4.5 4.5 0 0 1 8-2.83A4.5 4.5 0 0 1 19 11c0 5.65-7 10-7 10Z" />
@@ -42,6 +46,7 @@ const SERVICES = [
     slug: "domestic-assistance",
     name: "Domestic Assistance",
     blurb: "Cleaning, laundry, meal prep — a calm, well-kept home.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <path d="M4 21V8l8-5 8 5v13" />
@@ -55,6 +60,7 @@ const SERVICES = [
     slug: "transport-assistance",
     name: "Transport Assistance",
     blurb: "Reliable rides to appointments, work, study and outings.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <path d="M5 17h14" />
@@ -68,6 +74,7 @@ const SERVICES = [
     slug: "respite-support",
     name: "Respite Support",
     blurb: "Trusted short-term care that lets families and carers recharge.",
+    image: "/senior-father-wheelchair-young-son-walk.jpg",
     icon: (
       <>
         <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z" />
@@ -113,41 +120,62 @@ export default function Services() {
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group relative flex h-full flex-col gap-5 overflow-hidden rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)] transition-[transform,box-shadow,border-color] duration-[var(--duration-base)] hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-[var(--shadow-md)] md:p-7"
+                className="group relative block aspect-[4/5] overflow-hidden rounded-[var(--radius-lg)] border border-border bg-foreground shadow-[var(--shadow-sm)] transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1"
               >
+                <Image
+                  src={s.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-[700ms] ease-[var(--ease-out)] group-hover:scale-[1.06]"
+                />
+
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/55 to-foreground/10"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-transparent opacity-0 transition-opacity duration-[var(--duration-slow)] group-hover:opacity-100"
+                />
+
                 <span
                   aria-hidden
-                  className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-primary-soft text-primary transition-colors duration-[var(--duration-base)] group-hover:bg-primary group-hover:text-foreground-inverse"
+                  className="absolute left-5 top-5 grid h-11 w-11 place-items-center rounded-[var(--radius-md)] bg-background/95 text-primary shadow-[var(--shadow-sm)] backdrop-blur transition-colors duration-[var(--duration-base)] group-hover:bg-primary group-hover:text-foreground-inverse"
                 >
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     {s.icon}
                   </svg>
                 </span>
 
-                <div>
-                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                <span
+                  aria-hidden
+                  className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-white/25 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground-inverse backdrop-blur"
+                >
+                  NDIS
+                </span>
+
+                <div className="absolute inset-x-0 bottom-0 flex flex-col p-5 text-foreground-inverse md:p-6">
+                  <h3 className="text-xl font-semibold tracking-tight">
                     {s.name}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                  <p className="mt-1.5 max-w-[26ch] text-sm leading-relaxed text-white/85">
                     {s.blurb}
                   </p>
-                </div>
 
-                <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  Learn more
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 transition-transform duration-[var(--duration-base)] group-hover:translate-x-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="m13 5 7 7-7 7" />
-                  </svg>
-                </span>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground-inverse">
+                    Learn more
+                    <span
+                      aria-hidden
+                      className="grid h-7 w-7 place-items-center rounded-[var(--radius-pill)] bg-white/15 text-foreground-inverse transition-[transform,background] duration-[var(--duration-base)] group-hover:translate-x-0.5 group-hover:bg-secondary"
+                    >
+                      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="m13 5 7 7-7 7" />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
               </Link>
             </li>
           ))}
