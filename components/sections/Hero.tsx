@@ -25,7 +25,7 @@ export default function Hero() {
 
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-900/65 via-brand-900/40 to-brand-900/55 sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 via-black/30 to-black/45 sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
       />
       <div
         aria-hidden
@@ -55,7 +55,7 @@ export default function Hero() {
             className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
           >
             Fast, personalised{" "}
-            <span className="relative inline-block text-secondary sm:text-primary">
+            <span className="relative inline-block text-primary">
               NDIS support
               <svg
                 aria-hidden
@@ -77,7 +77,7 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-brand-100 drop-shadow-[0_1px_6px_rgba(7,39,60,0.5)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
+          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-white/85 drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
             Participant-centred NDIS support across Western Sydney — fast
             onboarding and plans built around your goals.
           </p>
