@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-  initials: string;
-  accent: "primary" | "secondary";
-};
+import TestimonialCard, { type Testimonial } from "@/components/sections/TestimonialCard";
 
 type Props = {
   items: readonly Testimonial[];
@@ -60,47 +53,17 @@ export default function TestimonialsCarousel({ items, intervalMs = 5500 }: Props
           className="flex transition-transform duration-[var(--duration-slow)] ease-[var(--ease-out)]"
           style={{ transform: `translate3d(-${index * 100}%, 0, 0)` }}
         >
-          {items.map((t, i) => {
-            const accentBg = t.accent === "primary" ? "bg-primary-soft" : "bg-secondary-soft";
-            const accentText = t.accent === "primary" ? "text-primary" : "text-secondary";
-
-            return (
-              <li
-                key={t.name}
-                className="w-full shrink-0 px-1"
-                aria-roledescription="slide"
-                aria-label={`${i + 1} of ${items.length}`}
-                aria-hidden={i !== index}
-              >
-                <article className="relative flex h-full flex-col rounded-[var(--radius-lg)] border border-border bg-background p-7 shadow-[var(--shadow-xs)] md:p-10">
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 24 24"
-                    className={`h-8 w-8 ${accentText}`}
-                    fill="currentColor"
-                  >
-                    <path d="M9.5 7C5 7 3 11 3 15v3h6v-7H6c0-2 1.5-3 3.5-3zm10 0c-4.5 0-6.5 4-6.5 8v3h6v-7h-3c0-2 1.5-3 3.5-3z" />
-                  </svg>
-
-                  <p className="mt-5 text-lg leading-relaxed text-foreground md:text-xl">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-
-                  <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-                    <span
-                      className={`grid h-11 w-11 place-items-center rounded-[var(--radius-pill)] text-sm font-bold ${accentBg} ${accentText}`}
-                    >
-                      {t.initials}
-                    </span>
-                    <div className="leading-tight">
-                      <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                      <p className="text-xs text-foreground-subtle">{t.role}</p>
-                    </div>
-                  </div>
-                </article>
-              </li>
-            );
-          })}
+          {items.map((t, i) => (
+            <li
+              key={t.name}
+              className="w-full shrink-0 px-1"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} of ${items.length}`}
+              aria-hidden={i !== index}
+            >
+              <TestimonialCard testimonial={t} />
+            </li>
+          ))}
         </ul>
       </div>
 

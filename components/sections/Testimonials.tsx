@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
+import TestimonialCard from "@/components/sections/TestimonialCard";
 import TestimonialsCarousel from "@/components/sections/TestimonialsCarousel";
 
 const TESTIMONIALS = [
@@ -49,9 +50,17 @@ export default function Testimonials() {
           className="mb-14"
         />
 
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-md md:hidden">
           <TestimonialsCarousel items={TESTIMONIALS} />
         </div>
+
+        <ul className="hidden gap-5 md:grid md:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <li key={t.name}>
+              <TestimonialCard testimonial={t} />
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground-subtle">
           <span>NDIS Registered</span>
