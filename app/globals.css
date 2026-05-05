@@ -6,36 +6,36 @@
    ============================================================ */
 
 :root {
-  /* Brand — Healthcare Blue (primary) */
-  --brand-50:  #eef6fb;
-  --brand-100: #d6eaf4;
-  --brand-200: #aed5e9;
-  --brand-300: #7ebbd9;
-  --brand-400: #4b9cc4;
-  --brand-500: #1f7fad;
-  --brand-600: #0f6791;
-  --brand-700: #0b5276;
-  --brand-800: #093f5c;
-  --brand-900: #062a3d;
+  /* Brand — Logo Navy (primary)  base = #114B73 at 700 */
+  --brand-50:  #ecf3f9;
+  --brand-100: #cfe1ee;
+  --brand-200: #a3c4dc;
+  --brand-300: #6fa1c5;
+  --brand-400: #3a7ea8;
+  --brand-500: #1d6491;
+  --brand-600: #155680;
+  --brand-700: #114b73;
+  --brand-800: #0c3956;
+  --brand-900: #07273c;
 
-  /* Accent — Care Green (secondary) */
-  --accent-50:  #ecf8f1;
-  --accent-100: #d1efde;
-  --accent-200: #a4debc;
-  --accent-300: #6fc998;
-  --accent-400: #3fae76;
-  --accent-500: #229561;
-  --accent-600: #19794e;
-  --accent-700: #145f3e;
-  --accent-800: #0f4830;
-  --accent-900: #0a3120;
+  /* Accent — Logo Teal (secondary)  base = #5AB5BA at 400 */
+  --accent-50:  #eef7f8;
+  --accent-100: #d6eef0;
+  --accent-200: #b1dfe2;
+  --accent-300: #87cdd1;
+  --accent-400: #5ab5ba;
+  --accent-500: #399aa0;
+  --accent-600: #2c8086;
+  --accent-700: #21666b;
+  --accent-800: #174a4d;
+  --accent-900: #0f3133;
 
   /* Semantic brand aliases */
-  --primary: var(--brand-600);
-  --primary-hover: var(--brand-700);
+  --primary: var(--brand-700);
+  --primary-hover: var(--brand-800);
   --primary-soft: var(--brand-50);
-  --secondary: var(--accent-500);
-  --secondary-hover: var(--accent-600);
+  --secondary: var(--accent-400);
+  --secondary-hover: var(--accent-500);
   --secondary-soft: var(--accent-50);
 
   /* Neutrals */
@@ -70,7 +70,7 @@
   --shadow-sm: 0 2px 6px rgba(14, 23, 38, 0.06);
   --shadow-md: 0 8px 24px rgba(14, 23, 38, 0.08);
   --shadow-lg: 0 18px 40px rgba(14, 23, 38, 0.10);
-  --shadow-ring-brand: 0 0 0 4px rgba(15, 103, 145, 0.15);
+  --shadow-ring-brand: 0 0 0 4px rgba(17, 75, 115, 0.18);
 
   /* Layout */
   --container-max: 1440px;
