@@ -32,6 +32,14 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-[background,border,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] ${
@@ -80,11 +88,11 @@ export default function Navbar() {
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          aria-controls="mobile-nav"
+          aria-controls="mobile-drawer"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] border border-border text-foreground transition-colors hover:bg-surface lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] text-foreground transition-colors hover:bg-surface lg:hidden"
         >
-          <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             {open ? (
               <>
                 <path d="M18 6 6 18" />
@@ -102,11 +110,39 @@ export default function Navbar() {
       </Container>
 
       <div
-        id="mobile-nav"
-        className={`lg:hidden ${open ? "block" : "hidden"} border-t border-border bg-background`}
+        aria-hidden={!open}
+        onClick={() => setOpen(false)}
+        className={`fixed inset-0 z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-[var(--duration-base)] ease-[var(--ease-out)] lg:hidden ${
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      <aside
+        id="mobile-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        className={`fixed inset-y-0 left-0 z-50 flex w-[86%] max-w-sm flex-col border-r border-border bg-background shadow-[var(--shadow-lg)] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out)] lg:hidden ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        <Container className="py-4">
-          <ul className="flex flex-col">
+        <div className="flex h-16 items-center justify-between border-b border-border px-5 md:h-20">
+          <Logo />
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] text-foreground transition-colors hover:bg-surface"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <nav aria-label="Mobile primary" className="flex-1 overflow-y-auto px-4 py-5">
+          <ul className="flex flex-col gap-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
@@ -119,24 +155,28 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-3 flex flex-col gap-2 border-t border-border pt-4">
-            <Link
-              href="tel:+61000000000"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border px-4 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary"
-            >
-              Call us
-            </Link>
-            <Link
-              href="/referrals"
-              onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-[var(--radius-pill)] bg-primary px-4 py-3 text-sm font-semibold text-foreground-inverse shadow-[var(--shadow-sm)] hover:bg-primary-hover"
-            >
-              Make a Referral
-            </Link>
-          </div>
-        </Container>
-      </div>
+        </nav>
+
+        <div className="flex flex-col gap-2.5 border-t border-border p-4">
+          <Link
+            href="/referrals"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center rounded-[var(--radius-pill)] bg-primary px-4 py-3 text-sm font-semibold text-foreground-inverse shadow-[var(--shadow-sm)] hover:bg-primary-hover"
+          >
+            Make a Referral
+          </Link>
+          <Link
+            href="tel:+61000000000"
+            onClick={() => setOpen(false)}
+            className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border px-4 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+            </svg>
+            Call us
+          </Link>
+        </div>
+      </aside>
     </header>
   );
 }

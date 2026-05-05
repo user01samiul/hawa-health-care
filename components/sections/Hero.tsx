@@ -61,13 +61,15 @@ export default function Hero() {
                 aria-hidden
                 viewBox="0 0 220 14"
                 preserveAspectRatio="none"
-                className="absolute -bottom-1 left-0 h-2.5 w-full text-accent-300"
+                className="absolute -bottom-1 left-0 h-3 w-full text-secondary"
               >
                 <path
+                  className="draw-on-mount"
                   d="M2 9 C 60 1, 130 1, 218 8"
+                  pathLength={100}
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="3"
+                  strokeWidth="4"
                   strokeLinecap="round"
                 />
               </svg>
