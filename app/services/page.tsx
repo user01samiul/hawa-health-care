@@ -76,31 +76,55 @@ export default function ServicesPage() {
 
       <section className="bg-surface py-20 md:py-28">
         <Container>
-          <SectionHeading
-            align="center"
-            eyebrow="Not sure which service fits?"
-            title={
-              <>
-                We&apos;ll help you map your plan to the{" "}
-                <span className="text-primary">right supports</span>.
-              </>
-            }
-            subtitle="A 15-minute call is usually enough to scope what's needed and confirm we have capacity in your suburb."
-            className="mb-10"
-          />
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-primary px-6 py-3.5 text-base font-semibold text-foreground-inverse shadow-[var(--shadow-md)] transition-colors hover:bg-primary-hover"
-            >
-              Book a call
-            </Link>
-            <Link
-              href="/referrals"
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border-strong bg-background px-6 py-3.5 text-base font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              Make a referral
-            </Link>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                eyebrow="How we deliver"
+                title={
+                  <>
+                    Same workers. Same standards.{" "}
+                    <span className="text-primary">Across every service</span>.
+                  </>
+                }
+                subtitle="The service category changes but the playbook doesn't. Whether it's respite, transport or daily living, you get the same fast onboarding, the same matched worker, and the same honest communication."
+              />
+            </div>
+
+            <ul className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
+              {[
+                {
+                  title: "Matched, not assigned",
+                  body: "Workers are matched to your preferences — gender, language, cultural fit, communication style — before the first shift.",
+                },
+                {
+                  title: "Continuity by default",
+                  body: "We aim for the same one or two workers on your roster, not a rotating cast. Backup is briefed properly when needed.",
+                },
+                {
+                  title: "Notes after every shift",
+                  body: "Short, useful handover notes shared with you and your coordinator — so nothing slips through gaps.",
+                },
+                {
+                  title: "Plans that flex",
+                  body: "Plans review with you regularly and shift as your goals shift. We don't lock you into anything that stops working.",
+                },
+              ].map((item) => (
+                <li
+                  key={item.title}
+                  className="flex flex-col gap-3 rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)]"
+                >
+                  <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-md)] bg-primary-soft text-primary">
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{item.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
