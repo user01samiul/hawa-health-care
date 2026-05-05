@@ -8,7 +8,7 @@ type LogoProps = {
 
 export default function Logo({
   className = "",
-  imgClassName = "h-14 w-auto md:h-16",
+  imgClassName = "h-12 w-auto md:h-16",
 }: LogoProps) {
   return (
     <Link

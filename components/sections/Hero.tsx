@@ -25,11 +25,11 @@ export default function Hero() {
 
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-background from-0% via-background/55 via-45% to-background/10 to-100% sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-900/65 via-brand-900/40 to-brand-900/55 sm:bg-gradient-to-r sm:from-background sm:from-30% sm:via-background/25 sm:via-65% sm:to-transparent sm:to-80%"
       />
       <div
         aria-hidden
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 hidden sm:block"
         style={{
           background:
             "radial-gradient(55% 45% at 0% 0%, var(--brand-50) 0%, transparent 65%)",
@@ -37,25 +37,25 @@ export default function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-background to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 hidden h-24 bg-gradient-to-t from-background to-transparent sm:block"
       />
 
       <Container className="grid w-full items-center gap-10 py-10 md:py-14 lg:grid-cols-12 lg:py-16">
         <div className="lg:col-span-7 xl:col-span-6">
-          <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-brand-100 bg-primary-soft px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+          <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-white/25 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-foreground-inverse backdrop-blur sm:border-brand-100 sm:bg-primary-soft sm:text-primary sm:backdrop-blur-none">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inset-0 animate-ping rounded-full bg-primary opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              <span className="absolute inset-0 animate-ping rounded-full bg-secondary opacity-70 sm:bg-primary sm:opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary sm:bg-primary" />
             </span>
             Registered NDIS Support
           </span>
 
           <h1
             id="hero-heading"
-            className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-[3.6rem]"
+            className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
           >
             Fast, personalised{" "}
-            <span className="relative inline-block text-primary">
+            <span className="relative inline-block text-secondary sm:text-primary">
               NDIS support
               <svg
                 aria-hidden
@@ -77,7 +77,7 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-foreground/80 sm:font-normal sm:text-foreground-muted">
+          <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-brand-100 drop-shadow-[0_1px_6px_rgba(7,39,60,0.5)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
             Participant-centred NDIS support across Western Sydney — fast
             onboarding and plans built around your goals.
           </p>
@@ -85,7 +85,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-primary px-6 py-3.5 text-base font-semibold text-foreground-inverse shadow-[var(--shadow-md)] transition-[background,transform,box-shadow] duration-[var(--duration-fast)] hover:bg-primary-hover hover:shadow-[var(--shadow-lg)] active:translate-y-px"
+              className="group inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-background px-6 py-3.5 text-base font-semibold text-primary shadow-[var(--shadow-md)] transition-[background,transform,box-shadow] duration-[var(--duration-fast)] hover:bg-surface hover:shadow-[var(--shadow-lg)] active:translate-y-px sm:bg-primary sm:text-foreground-inverse sm:hover:bg-primary-hover"
             >
               Enquire Now
               <svg
@@ -103,13 +103,13 @@ export default function Hero() {
             </Link>
             <Link
               href="/referrals"
-              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border-strong bg-background px-6 py-3.5 text-base font-semibold text-foreground transition-colors duration-[var(--duration-fast)] hover:border-primary hover:text-primary"
+              className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-white/40 bg-white/10 px-6 py-3.5 text-base font-semibold text-foreground-inverse backdrop-blur transition-colors duration-[var(--duration-fast)] hover:bg-white/20 sm:border-border-strong sm:bg-background sm:text-foreground sm:backdrop-blur-none sm:hover:border-primary sm:hover:bg-background sm:hover:text-primary"
             >
               Make a Referral
             </Link>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-semibold text-foreground-inverse drop-shadow-[0_1px_4px_rgba(7,39,60,0.55)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
+          <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2.5 text-sm font-medium text-white/80 drop-shadow-[0_1px_4px_rgba(7,39,60,0.5)] sm:font-normal sm:text-foreground-muted sm:drop-shadow-none">
             {TRUST_POINTS.map((point) => (
               <li key={point} className="inline-flex items-center gap-2">
                 <span className="grid h-5 w-5 place-items-center rounded-full bg-secondary-soft text-secondary">
