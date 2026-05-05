@@ -48,7 +48,7 @@ export default function Navbar() {
           : "border-transparent bg-background"
       }`}
     >
-      <Container className="flex h-16 items-center justify-between gap-4 md:h-20">
+      <Container className="flex h-20 items-center justify-between gap-4 md:h-24">
         <Logo />
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -126,7 +126,7 @@ export default function Navbar() {
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex h-16 items-center justify-between border-b border-border px-5 md:h-20">
+        <div className="flex h-20 items-center justify-between border-b border-border px-5 md:h-24">
           <Logo />
           <button
             type="button"

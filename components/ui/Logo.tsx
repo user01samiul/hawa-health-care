@@ -3,9 +3,13 @@ import Link from "next/link";
 
 type LogoProps = {
   className?: string;
+  imgClassName?: string;
 };
 
-export default function Logo({ className = "" }: LogoProps) {
+export default function Logo({
+  className = "",
+  imgClassName = "h-14 w-auto md:h-16",
+}: LogoProps) {
   return (
     <Link
       href="/"
@@ -18,7 +22,7 @@ export default function Logo({ className = "" }: LogoProps) {
         width={1268}
         height={630}
         priority
-        className="h-10 w-auto md:h-11"
+        className={imgClassName}
       />
     </Link>
   );

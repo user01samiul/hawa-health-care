@@ -60,7 +60,7 @@ export default function Footer() {
       <Container className="py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-4">
-            <Logo />
+            <Logo imgClassName="h-20 w-auto md:h-24" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground-muted">
               Tailored, participant-centred NDIS support across Western Sydney
               and beyond. Same-day or next-day onboarding, with 7+ years of
