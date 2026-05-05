@@ -55,13 +55,13 @@ export default function Hero() {
             className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
           >
             Fast, personalised{" "}
-            <span className="relative inline-block text-primary">
+            <span className="relative inline-block text-secondary sm:text-primary">
               NDIS support
               <svg
                 aria-hidden
                 viewBox="0 0 220 14"
                 preserveAspectRatio="none"
-                className="absolute -bottom-1 left-0 h-3 w-full text-secondary"
+                className="absolute -bottom-1 left-0 h-3 w-full text-primary sm:text-secondary"
               >
                 <path
                   className="draw-on-mount"
