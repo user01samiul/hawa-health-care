@@ -26,13 +26,6 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
-  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
     };
@@ -41,13 +34,14 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b transition-[background,border,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] ${
-        scrolled
-          ? "border-border bg-background/85 shadow-[var(--shadow-sm)] backdrop-blur"
-          : "border-transparent bg-background"
-      }`}
-    >
+    <>
+      <header
+        className={`sticky top-0 z-50 border-b transition-[background,border,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] ${
+          scrolled
+            ? "border-border bg-background/85 shadow-[var(--shadow-sm)] backdrop-blur"
+            : "border-transparent bg-background"
+        }`}
+      >
       <Container className="flex h-20 items-center justify-between gap-4 md:h-24">
         <Logo />
 
@@ -108,6 +102,7 @@ export default function Navbar() {
           </svg>
         </button>
       </Container>
+      </header>
 
       <div
         aria-hidden={!open}
@@ -177,6 +172,6 @@ export default function Navbar() {
           </Link>
         </div>
       </aside>
-    </header>
+    </>
   );
 }
