@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Container from "@/components/ui/Container";
@@ -10,6 +11,7 @@ type PageHeroProps = {
   subtitle?: ReactNode;
   breadcrumbs?: Crumb[];
   children?: ReactNode;
+  image?: string;
 };
 
 export default function PageHero({
@@ -18,16 +20,36 @@ export default function PageHero({
   subtitle,
   breadcrumbs,
   children,
+  image = "/senior-father-wheelchair-young-son-walk.jpg",
 }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-surface pb-16 pt-14 md:pb-24 md:pt-20">
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-brand-100/55 blur-3xl" />
-        <div className="absolute -right-32 -top-24 h-96 w-96 rounded-full bg-accent-100/40 blur-3xl" />
-      </div>
+    <section className="relative isolate overflow-hidden pb-16 pt-14 md:pb-24 md:pt-20">
+      <Image
+        src={image}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover object-[70%_center]"
+      />
+
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.32]"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-background/95 via-background/85 to-background/70"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-background/90 via-background/55 to-background/30 sm:to-transparent"
+      />
+
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-brand-100/45 blur-3xl" />
+        <div className="absolute -right-32 -top-24 h-96 w-96 rounded-full bg-accent-100/35 blur-3xl" />
+      </div>
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.28]"
         style={{
           backgroundImage:
             "linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)",
@@ -62,7 +84,7 @@ export default function PageHero({
         ) : null}
 
         {eyebrow ? (
-          <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-brand-100 bg-primary-soft px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+          <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-brand-100 bg-primary-soft px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary shadow-[var(--shadow-xs)]">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             {eyebrow}
           </span>
