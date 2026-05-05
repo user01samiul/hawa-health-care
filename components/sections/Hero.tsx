@@ -69,8 +69,9 @@ export default function Hero() {
             when you need it most.
           </h1>
 
-          <p className="mt-5 max-w-sm text-base leading-7 text-white/80 drop-shadow-[0_1px_5px_rgba(0,0,0,0.4)] sm:mt-6 sm:max-w-xl sm:text-lg sm:font-normal sm:leading-relaxed sm:text-foreground-muted sm:drop-shadow-none">
-            Fast NDIS support across Western Sydney, shaped around your goals.
+          <p className="mt-5 max-w-sm text-base font-medium leading-7 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)] sm:mt-6 sm:max-w-xl sm:text-lg sm:font-normal sm:leading-relaxed sm:text-foreground-muted sm:drop-shadow-none">
+            Fast NDIS support across Western Sydney, shaped around your goals
+            with clear communication from day one.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
