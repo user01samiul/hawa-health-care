@@ -53,7 +53,7 @@ export default function Hero() {
                 aria-hidden
                 viewBox="0 0 220 14"
                 preserveAspectRatio="none"
-                className="absolute -bottom-1 left-0 h-3 w-full text-primary sm:text-secondary"
+                className="absolute -bottom-1 left-0 h-3 w-full text-secondary sm:text-secondary"
               >
                 <path
                   className="draw-on-mount"
