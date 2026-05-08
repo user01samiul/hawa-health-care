@@ -14,9 +14,18 @@ export default function SafeCommitments() {
   return (
     <section
       aria-labelledby="safe-commitments-heading"
-      className="bg-lime-accent text-foreground"
+      className="relative isolate overflow-hidden bg-lime-accent text-foreground"
     >
-      <Container className="py-12 md:py-16">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, var(--foreground) 0 1px, transparent 1px 14px)",
+        }}
+      />
+
+      <Container className="relative py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-5">
             <h2

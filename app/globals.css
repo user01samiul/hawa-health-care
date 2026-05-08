@@ -58,9 +58,9 @@
   --info:    var(--brand-500);
 
   /* Highlight surfaces */
-  --lime-accent: #eee002;
-  --lime-accent-soft: #f6ec55;
-  --lime-accent-deep: #a89e02;
+  --lime-accent: #eedf02;
+  --lime-accent-soft: #f6eb55;
+  --lime-accent-deep: #a89d02;
 
   /* Radius */
   --radius-xs: 4px;
