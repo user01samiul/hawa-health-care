@@ -5,6 +5,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const AUDIENCES = [
   {
+    index: "01",
+    tag: "For participants",
     title: "NDIS participants",
     body: "Direct support shaped around your plan, your goals, and your everyday life.",
     points: [
@@ -21,6 +23,8 @@ const AUDIENCES = [
     cta: { label: "How we support participants", href: "/about" },
   },
   {
+    index: "02",
+    tag: "For families",
     title: "Families",
     body: "Clear updates and consistent care so the people you love are always looked after.",
     points: [
@@ -39,6 +43,8 @@ const AUDIENCES = [
     cta: { label: "Talk to our team", href: "/contact" },
   },
   {
+    index: "03",
+    tag: "For coordinators",
     title: "Support coordinators",
     body: "A reliable provider for your participants — fast quotes, clean reporting, no chasing.",
     points: [
@@ -62,10 +68,33 @@ export default function WhoWeHelp() {
   return (
     <section
       aria-labelledby="who-heading"
-      className="relative bg-surface py-20 md:py-28"
+      className="relative isolate overflow-hidden bg-surface py-20 md:py-28"
     >
+      {/* Decorative background — soft brand grid + colour wash */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.5]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(17,75,115,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,75,115,0.06) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 -left-24 -z-10 h-[28rem] w-[28rem] rounded-full bg-brand-100/45 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 right-[-8rem] -z-10 h-[24rem] w-[24rem] rounded-full bg-accent-100/55 blur-3xl"
+      />
+
       <Container>
-        <div className="grid items-end gap-10 lg:grid-cols-12">
+        <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="Who we help"
@@ -77,10 +106,43 @@ export default function WhoWeHelp() {
               }
               subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf — we make your part easier."
             />
+
+            <dl className="mt-8 grid max-w-xl grid-cols-3 gap-4 sm:gap-6">
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  3
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Audiences we
+                  <br />
+                  partner with
+                </dd>
+              </div>
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  24h
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Service agreements
+                  <br />
+                  turnaround
+                </dd>
+              </div>
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                  7+
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Years in
+                  <br />
+                  healthcare
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <div className="relative hidden lg:col-span-5 lg:block">
-            <div className="relative aspect-[5/3] overflow-hidden rounded-[var(--radius-lg)] border border-border shadow-[var(--shadow-md)]">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-xl)] border border-border shadow-[var(--shadow-lg)]">
               <Image
                 src="/senior-father-wheelchair-young-son-walk.jpg"
                 alt="Hawa Health Care worker supporting a participant out in the community."
@@ -90,65 +152,191 @@ export default function WhoWeHelp() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-tr from-primary/35 via-transparent to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-brand-900/75 via-brand-900/15 to-transparent"
               />
+
+              {/* Floating chip — top-left */}
+              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-white/40 bg-white/85 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary backdrop-blur-md">
+                <span className="relative grid h-2 w-2 place-items-center">
+                  <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-secondary opacity-70" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-secondary" />
+                </span>
+                In the community
+              </div>
+
+              {/* Caption card — bottom */}
+              <div className="absolute inset-x-4 bottom-4 rounded-[var(--radius-md)] border border-white/30 bg-white/15 p-4 backdrop-blur-md">
+                <p className="text-sm font-semibold leading-snug text-white">
+                  &ldquo;Real support, real continuity — out where life
+                  actually happens.&rdquo;
+                </p>
+                <p className="mt-1 text-xs text-white/80">
+                  Western Sydney · Same-day onboarding available
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        <ul className="mt-12 grid gap-5 md:grid-cols-3">
-          {AUDIENCES.map((a) => (
+        <ul className="mt-16 grid gap-6 md:grid-cols-3 md:gap-5 lg:gap-6">
+          {AUDIENCES.map((a, i) => (
             <li
               key={a.title}
-              className="group relative flex h-full flex-col rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)] transition-[transform,box-shadow,border-color] duration-[var(--duration-base)] hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-[var(--shadow-md)] md:p-7"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-xl)] border border-border bg-background p-7 shadow-[var(--shadow-xs)] transition-[transform,box-shadow,border-color] duration-[var(--duration-base)] hover:-translate-y-1 hover:border-brand-200 hover:shadow-[var(--shadow-lg)] md:p-8"
             >
-              <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-primary-soft text-primary transition-colors duration-[var(--duration-base)] group-hover:bg-primary group-hover:text-foreground-inverse">
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  {a.icon}
-                </svg>
-              </span>
+              {/* Top accent bar */}
+              <span
+                aria-hidden
+                className={`absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-[var(--duration-slow)] group-hover:scale-x-100 ${
+                  i === 1 ? "bg-secondary" : "bg-primary"
+                }`}
+              />
 
-              <h3 className="mt-5 text-lg font-semibold tracking-tight text-foreground">
+              {/* Top row — index + tag */}
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-foreground-subtle">
+                  {a.index}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-border bg-surface px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground-muted">
+                  {a.tag}
+                </span>
+              </div>
+
+              {/* Icon — premium dual-layer treatment */}
+              <div className="relative mt-6 h-14 w-14">
+                <span
+                  aria-hidden
+                  className="absolute inset-0 rounded-[var(--radius-md)] bg-primary-soft transition-transform duration-[var(--duration-base)] group-hover:rotate-6"
+                />
+                <span className="absolute inset-0 grid place-items-center rounded-[var(--radius-md)] border border-brand-100 bg-background text-primary shadow-[var(--shadow-xs)] transition-colors duration-[var(--duration-base)] group-hover:border-primary group-hover:bg-primary group-hover:text-foreground-inverse">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {a.icon}
+                  </svg>
+                </span>
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold tracking-tight text-foreground sm:text-[1.35rem]">
                 {a.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
                 {a.body}
               </p>
 
-              <ul className="mt-4 space-y-2 text-sm text-foreground-muted">
+              <div
+                aria-hidden
+                className="mt-6 h-px w-full bg-gradient-to-r from-border via-border to-transparent"
+              />
+
+              <ul className="mt-5 flex-1 space-y-3 text-sm text-foreground">
                 {a.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-secondary-soft text-secondary">
-                      <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <li key={p} className="flex items-start gap-2.5">
+                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-secondary-soft text-secondary ring-1 ring-inset ring-accent-100">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-3 w-3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
                         <path d="M20 6 9 17l-5-5" />
                       </svg>
                     </span>
-                    {p}
+                    <span className="leading-snug text-foreground-muted">
+                      {p}
+                    </span>
                   </li>
                 ))}
               </ul>
 
               <Link
                 href={a.cta.href}
-                className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-primary"
+                className="mt-7 inline-flex items-center gap-2 self-start text-sm font-semibold text-primary"
               >
-                {a.cta.label}
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-4 w-4 transition-transform duration-[var(--duration-base)] group-hover:translate-x-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m13 5 7 7-7 7" />
-                </svg>
+                <span className="relative">
+                  {a.cta.label}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-[var(--duration-base)] group-hover:scale-x-100"
+                  />
+                </span>
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-primary-soft text-primary transition-[background,color,transform] duration-[var(--duration-base)] group-hover:translate-x-0.5 group-hover:bg-primary group-hover:text-foreground-inverse">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-3.5 w-3.5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m13 5 7 7-7 7" />
+                  </svg>
+                </span>
               </Link>
             </li>
           ))}
         </ul>
+
+        {/* Bottom hand-off — subtle reinforcement strip */}
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)] md:flex-row md:items-center md:p-7">
+          <div className="flex items-center gap-4">
+            <span
+              aria-hidden
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary text-foreground-inverse"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                Not sure where you fit?
+              </p>
+              <p className="mt-0.5 text-sm text-foreground-muted">
+                Tell us about the participant — we&apos;ll point you the right
+                way, fast.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-border-strong bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition-colors duration-[var(--duration-fast)] hover:border-primary hover:text-primary"
+          >
+            Get in touch
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 5 7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </Container>
     </section>
   );
