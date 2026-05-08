@@ -28,7 +28,7 @@ export const SERVICES: ServiceContent[] = [
       "Skill-building around social interactions and routines",
       "Goal tracking shared with your support coordinator",
     ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/community participation.png",
     focus: true,
   },
   {
@@ -49,7 +49,7 @@ export const SERVICES: ServiceContent[] = [
       "Workers trained in safe handling and infection control",
       "Care plans reviewed with you and your coordinator",
     ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/personal care.jpg",
   },
   {
     slug: "domestic-assistance",
@@ -69,7 +69,7 @@ export const SERVICES: ServiceContent[] = [
       "Light gardening and outdoor tidying",
       "Workers matched to your preferences and routine",
     ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/domestic assistance.png",
   },
   {
     slug: "respite-support",
@@ -89,7 +89,7 @@ export const SERVICES: ServiceContent[] = [
       "Workers matched to the participant's usual routine",
       "Emergency respite available where capacity allows",
     ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/Respite Support.png",
     focus: true,
   },
 ];

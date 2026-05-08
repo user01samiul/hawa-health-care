@@ -66,6 +66,7 @@ export default async function ServiceDetailPage({
           { label: service.name },
         ]}
         eyebrow={service.focus ? "Focus service" : "NDIS service"}
+        image={service.image}
         title={service.name}
         subtitle={service.blurb}
       >
