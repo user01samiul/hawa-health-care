@@ -1,4 +1,5 @@
-const rawUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hawahealthcare.com.au";
+const rawUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://hawahealthcare.com.au";
 const SITE_URL = rawUrl.replace(/\/$/, "");
 
 export const SITE = {
@@ -27,9 +28,14 @@ export const SITE = {
     "disability support NSW",
     "support coordination",
   ],
-  phone: "+61000000000",
-  phoneDisplay: "(00) 0000 0000",
-  email: "office@alevenio.com",
+  phone: process.env.NEXT_PUBLIC_PHONE ?? "+61000000000",
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "(00) 0000 0000",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "office@alevenio.com",
+  socials: {
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+    linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "",
+  },
   address: {
     street: "",
     locality: "Western Sydney",
