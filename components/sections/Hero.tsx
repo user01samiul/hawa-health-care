@@ -46,9 +46,8 @@ export default function Hero() {
             id="hero-heading"
             className="text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse drop-shadow-[0_2px_12px_rgba(7,39,60,0.55)] sm:text-5xl sm:text-foreground sm:drop-shadow-none lg:text-[3.6rem]"
           >
-            Fast, personalised{" "}
             <span className="relative inline-block text-secondary sm:text-primary">
-              NDIS support
+              NDIS Registered
               <svg
                 aria-hidden
                 viewBox="0 0 220 14"
@@ -66,7 +65,7 @@ export default function Hero() {
                 />
               </svg>
             </span>{" "}
-            when you need it most.
+            Service Provider Australia
           </h1>
 
           <p className="mt-5 max-w-sm text-base font-medium leading-7 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)] sm:mt-6 sm:max-w-xl sm:text-lg sm:font-normal sm:leading-relaxed sm:text-foreground-muted sm:drop-shadow-none">
@@ -115,27 +114,6 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="relative hidden lg:col-span-5 lg:col-start-8 lg:block xl:col-span-6 xl:col-start-7">
-          <div className="absolute right-0 top-4 inline-flex items-center gap-3 rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur md:p-5">
-            <span className="grid h-10 w-10 place-items-center rounded-[var(--radius-md)] bg-secondary-soft text-secondary">
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-            </span>
-            <div className="leading-tight">
-              <p className="text-sm font-semibold text-foreground">Onboarded today</p>
-              <p className="text-xs text-foreground-subtle">No long wait times</p>
-            </div>
-          </div>
-
-          <div className="absolute bottom-6 right-12 rounded-[var(--radius-lg)] border border-border bg-background/95 p-4 shadow-[var(--shadow-md)] backdrop-blur md:p-5">
-            <p className="text-2xl font-bold leading-none text-primary">7+ yrs</p>
-            <p className="mt-1 text-xs font-medium text-foreground-subtle">
-              Healthcare experience
-            </p>
-          </div>
-        </div>
       </Container>
     </section>
   );
