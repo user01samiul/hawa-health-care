@@ -93,7 +93,7 @@ export default function Services() {
             <li key={s.slug}>
               <Link
                 href={`/services/${s.slug}`}
-                className="group relative block aspect-[7/8] overflow-hidden rounded-[var(--radius-lg)] bg-foreground shadow-[var(--shadow-sm)] ring-1 ring-foreground/5 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1"
+                className="group relative block aspect-[10/11] overflow-hidden rounded-[var(--radius-lg)] bg-foreground shadow-[var(--shadow-sm)] ring-1 ring-foreground/5 transition-[transform,box-shadow] duration-[var(--duration-base)] ease-[var(--ease-out)] hover:-translate-y-1 hover:shadow-[var(--shadow-lg)] focus-visible:-translate-y-1"
               >
                 <Image
                   src={s.image}
