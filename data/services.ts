@@ -11,26 +11,6 @@ export type ServiceContent = {
 
 export const SERVICES: ServiceContent[] = [
   {
-    slug: "daily-living-assistance",
-    name: "Daily Living Assistance",
-    blurb: "Hands-on help with everyday routines so days run smoothly.",
-    description:
-      "Practical day-to-day support that fits around your routine. From morning preparation to evening wind-downs, our support workers help you move through the day with confidence — without taking over the parts you want to do yourself.",
-    whoFor: [
-      "Participants who need practical help to maintain a daily routine",
-      "People returning home after hospital or rehab",
-      "Families looking for consistent, named support workers",
-    ],
-    included: [
-      "Personalised support plans tailored to your goals",
-      "Help with meal preparation, household tasks and errands",
-      "Medication prompts and appointment reminders",
-      "Skill-building toward greater independence",
-      "Regular check-ins with your support coordinator",
-    ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
-  },
-  {
     slug: "community-participation",
     name: "Social & Community Participation",
     blurb: "Get out, stay social, and build the connections that matter.",
@@ -88,26 +68,6 @@ export const SERVICES: ServiceContent[] = [
       "Grocery shopping and meal preparation",
       "Light gardening and outdoor tidying",
       "Workers matched to your preferences and routine",
-    ],
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
-  },
-  {
-    slug: "transport-assistance",
-    name: "Transport Assistance",
-    blurb: "Reliable rides to appointments, work, study and outings.",
-    description:
-      "Reliable transport that doesn't make you wait. We coordinate trips to medical appointments, work, study, family visits and community activities — with the same support worker wherever possible, so the journey is part of the support.",
-    whoFor: [
-      "Participants needing transport to appointments and activities",
-      "People who require door-to-door or supervised travel",
-      "Families looking for safe, consistent transport help",
-    ],
-    included: [
-      "Door-to-door pick-up and drop-off",
-      "Transport to medical, allied health and NDIS appointments",
-      "Trips to work, study, social and community activities",
-      "Insured, well-maintained vehicles",
-      "Workers trained in safe travel and accessibility support",
     ],
     image: "/senior-father-wheelchair-young-son-walk.jpg",
   },

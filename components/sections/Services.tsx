@@ -5,19 +5,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const SERVICES = [
   {
-    slug: "daily-living-assistance",
-    name: "Daily Living Assistance",
-    blurb: "Hands-on help with everyday routines so days run smoothly.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
-    icon: (
-      <>
-        <path d="M3 12 12 3l9 9" />
-        <path d="M5 10v10h14V10" />
-        <path d="M9 20v-6h6v6" />
-      </>
-    ),
-  },
-  {
     slug: "community-participation",
     name: "Community Participation",
     blurb: "Get out, stay social, and build the connections that matter.",
@@ -57,20 +44,6 @@ const SERVICES = [
     ),
   },
   {
-    slug: "transport-assistance",
-    name: "Transport Assistance",
-    blurb: "Reliable rides to appointments, work, study and outings.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
-    icon: (
-      <>
-        <path d="M5 17h14" />
-        <path d="M3 17V9l2-5h14l2 5v8" />
-        <circle cx="7.5" cy="17.5" r="1.5" />
-        <circle cx="16.5" cy="17.5" r="1.5" />
-      </>
-    ),
-  },
-  {
     slug: "respite-support",
     name: "Respite Support",
     blurb: "Trusted short-term care that lets families and carers recharge.",
@@ -101,7 +74,7 @@ export default function Services() {
                 <span className="text-primary">one provider</span>.
               </>
             }
-            subtitle="Six core services across daily living, community, transport, and respite — coordinated by one team that actually knows your plan."
+            subtitle="Four core services across personal care, social and community access, domestic care and respite — coordinated by one team that actually knows your plan."
           />
           <Link
             href="/services"
@@ -115,7 +88,7 @@ export default function Services() {
           </Link>
         </div>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
           {SERVICES.map((s) => (
             <li key={s.slug}>
               <Link

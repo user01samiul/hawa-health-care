@@ -12,12 +12,10 @@ const QUICK_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  { href: "/services/daily-living-assistance", label: "Daily Living Assistance" },
-  { href: "/services/community-participation", label: "Community Participation" },
   { href: "/services/personal-care", label: "Personal Care" },
-  { href: "/services/domestic-assistance", label: "Domestic Assistance" },
-  { href: "/services/transport-assistance", label: "Transport Assistance" },
   { href: "/services/respite-support", label: "Respite Support" },
+  { href: "/services/community-participation", label: "Social & Community Access" },
+  { href: "/services/domestic-assistance", label: "Domestic Care & Assistance" },
 ];
 
 const SOCIALS = [

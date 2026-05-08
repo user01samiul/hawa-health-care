@@ -10,7 +10,7 @@ import { SERVICES } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Six core NDIS services delivered by one coordinated team across Western Sydney — from daily living and community participation to respite support.",
+    "Four core NDIS services delivered by one coordinated team across Western Sydney — personal care, respite, social and community access, and domestic care.",
 };
 
 export default function ServicesPage() {
@@ -21,7 +21,7 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title={
           <>
-            Six core supports.{" "}
+            Four core supports.{" "}
             <span className="text-primary">One coordinated team</span>.
           </>
         }
@@ -30,7 +30,7 @@ export default function ServicesPage() {
 
       <section className="py-20 md:py-28">
         <Container>
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
             {SERVICES.map((s, i) => (
               <li key={s.slug}>
                 <Link
@@ -86,7 +86,7 @@ export default function ServicesPage() {
                     <span className="text-primary">Across every service</span>.
                   </>
                 }
-                subtitle="The service category changes but the playbook doesn't. Whether it's respite, transport or daily living, you get the same fast onboarding, the same matched worker, and the same honest communication."
+                subtitle="The service category changes but the playbook doesn't. Whether it's respite, personal care or domestic assistance, you get the same fast onboarding, the same matched worker, and the same honest communication."
               />
             </div>
 
