@@ -3,6 +3,7 @@ import EligibilityBanner from "@/components/sections/EligibilityBanner";
 import FastOnboarding from "@/components/sections/FastOnboarding";
 import FinalCta from "@/components/sections/FinalCta";
 import Hero from "@/components/sections/Hero";
+import SafeCommitments from "@/components/sections/SafeCommitments";
 import Services from "@/components/sections/Services";
 import Testimonials from "@/components/sections/Testimonials";
 import WhoWeHelp from "@/components/sections/WhoWeHelp";
@@ -18,6 +19,7 @@ export default function Home() {
       <EligibilityBanner />
       <WhyUs />
       <WhoWeHelp />
+      <SafeCommitments />
       <Testimonials />
       <FinalCta />
     </>
