@@ -8,7 +8,7 @@ const SERVICES = [
     slug: "community-participation",
     name: "Community Participation",
     blurb: "Get out, stay social, and build the connections that matter.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/community participation.png",
     icon: (
       <>
         <circle cx="9" cy="8" r="3" />
@@ -22,7 +22,7 @@ const SERVICES = [
     slug: "personal-care",
     name: "Personal Care",
     blurb: "Respectful, dignified support for showering, dressing and grooming.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/personal care.jpg",
     icon: (
       <>
         <path d="M12 21s-7-4.35-7-10a4.5 4.5 0 0 1 8-2.83A4.5 4.5 0 0 1 19 11c0 5.65-7 10-7 10Z" />
@@ -33,7 +33,7 @@ const SERVICES = [
     slug: "domestic-assistance",
     name: "Domestic Assistance",
     blurb: "Cleaning, laundry, meal prep — a calm, well-kept home.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/domestic assistance.png",
     icon: (
       <>
         <path d="M4 21V8l8-5 8 5v13" />
@@ -47,7 +47,7 @@ const SERVICES = [
     slug: "respite-support",
     name: "Respite Support",
     blurb: "Trusted short-term care that lets families and carers recharge.",
-    image: "/senior-father-wheelchair-young-son-walk.jpg",
+    image: "/services/Respite Support.png",
     icon: (
       <>
         <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V6a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3z" />

@@ -29,7 +29,7 @@ export default function About() {
           <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] bg-surface shadow-[var(--shadow-md)]">
               <Image
-                src="/senior-father-wheelchair-young-son-walk.jpg"
+                src="/smiley-man-woman-posing.jpg"
                 alt="A Hawa Health Care support worker walking with a participant in their community."
                 fill
                 sizes="(min-width: 1024px) 40vw, (min-width: 640px) 60vw, 100vw"
