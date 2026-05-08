@@ -18,8 +18,8 @@ export default function Home() {
       <FastOnboarding />
       <EligibilityBanner />
       <WhyUs />
-      <WhoWeHelp />
       <SafeCommitments />
+      <WhoWeHelp />
       <Testimonials />
       <FinalCta />
     </>
