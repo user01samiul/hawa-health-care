@@ -14,22 +14,24 @@ export const metadata: Metadata = {
 const VALUES = [
   {
     title: "Personalised",
-    body: "Plans built around the participant — preferences, culture, goals — never a template.",
+    body: "Support shaped around each participant's goals, routines, culture and preferences — never a one-size-fits-all approach.",
     icon: <path d="M12 21s-7-4.35-7-10a4.5 4.5 0 0 1 8-2.83A4.5 4.5 0 0 1 19 11c0 5.65-7 10-7 10Z" />,
   },
   {
-    title: "Fast",
-    body: "Same-day or next-day onboarding. Service agreements signed in hours, not weeks.",
+    title: "Respectful",
+    body: "We provide support with dignity, patience and care, making sure every participant feels heard, safe and valued.",
     icon: (
       <>
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 6v6l4 2" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </>
     ),
   },
   {
     title: "Reliable",
-    body: "Consistent, named support workers — clear comms with you and your coordinator.",
+    body: "Consistent support workers, clear communication and dependable service that participants and families can trust.",
     icon: (
       <>
         <path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6Z" />
@@ -39,11 +41,11 @@ const VALUES = [
   },
   {
     title: "Trusted",
-    body: "7+ years across the health sector. Trained workers, clean handovers, honest plans.",
+    body: "Backed by healthcare experience, trained workers and transparent support planning from the first conversation.",
     icon: (
       <>
-        <circle cx="12" cy="8" r="4" />
-        <path d="M6 21v-1a6 6 0 0 1 12 0v1" />
+        <circle cx="12" cy="8" r="7" />
+        <path d="m8.21 13.89 1.5 7.61L12 17l2.29 4.5 1.5-7.6" />
       </>
     ),
   },
@@ -57,10 +59,11 @@ const STATS = [
 ];
 
 const PROMISE = [
-  "Same-day or next-day onboarding when there's capacity",
-  "A real person on the phone, not a contact form black hole",
-  "Service agreements that read like English, not legal jargon",
-  "Notes after every shift so families and coordinators stay in the loop",
+  "Support shaped around individual goals",
+  "A real person to speak with",
+  "Clear service agreements",
+  "Consistent communication",
+  "Matched, respectful support workers",
 ];
 
 export default function AboutPage() {
@@ -131,34 +134,77 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-surface py-20 md:py-28">
+      <section className="relative isolate overflow-hidden bg-primary py-24 text-foreground-inverse md:py-32">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 50% 0%, rgba(90,181,186,0.22) 0%, transparent 70%), radial-gradient(45% 40% at 100% 100%, rgba(255,255,255,0.08) 0%, transparent 65%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
+        />
+
         <Container>
-          <SectionHeading
-            align="center"
-            eyebrow="What we stand for"
-            title={
-              <>
-                Four values you'll feel in{" "}
-                <span className="text-primary">every interaction</span>.
-              </>
-            }
-            subtitle="Brand promises are easy. We pin our values to actions you can measure on day one."
-            className="mb-14"
-          />
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUES.map((v) => (
+          <div className="mx-auto mb-16 flex max-w-3xl flex-col items-center text-center md:mb-20">
+            <span className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-white/25 bg-white/[0.07] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground-inverse backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+              What we stand for
+            </span>
+            <h2 className="mt-5 text-balance text-4xl font-bold leading-[1.05] tracking-tight text-foreground-inverse sm:text-5xl lg:text-[3.15rem]">
+              Values you can feel in{" "}
+              <span className="relative inline-block text-secondary">
+                every interaction
+                <span
+                  aria-hidden
+                  className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-secondary/40"
+                />
+              </span>
+              .
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
+              Our values guide how we support participants, communicate with families and work alongside support coordinators.
+            </p>
+          </div>
+
+          <ul className="grid gap-px overflow-hidden rounded-[var(--radius-xl)] border border-white/15 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+            {VALUES.map((v, i) => (
               <li
                 key={v.title}
-                className="group relative flex flex-col gap-4 rounded-[var(--radius-lg)] border border-border bg-background p-7 shadow-[var(--shadow-xs)] transition-shadow duration-[var(--duration-base)] hover:shadow-[var(--shadow-md)]"
+                className="group relative flex flex-col gap-6 bg-primary p-8 transition-colors duration-[var(--duration-base)] hover:bg-primary-hover lg:p-9"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-[var(--radius-md)] bg-primary-soft text-primary transition-colors duration-[var(--duration-base)] group-hover:bg-primary group-hover:text-foreground-inverse">
-                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <span
+                  aria-hidden
+                  className="absolute right-6 top-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/35"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <span
+                  aria-hidden
+                  className="absolute inset-x-8 top-0 h-px scale-x-0 bg-gradient-to-r from-transparent via-secondary to-transparent transition-transform duration-[var(--duration-slow)] ease-[var(--ease-out)] group-hover:scale-x-100"
+                />
+
+                <span className="grid h-14 w-14 place-items-center rounded-[var(--radius-md)] border border-white/20 bg-white/[0.08] text-secondary transition-[background,border-color,color] duration-[var(--duration-base)] group-hover:border-secondary/60 group-hover:bg-secondary/15">
+                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     {v.icon}
                   </svg>
                 </span>
+
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{v.body}</p>
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground-inverse">
+                    {v.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/75">
+                    {v.body}
+                  </p>
                 </div>
               </li>
             ))}
@@ -174,11 +220,11 @@ export default function AboutPage() {
                 eyebrow="Our promise"
                 title={
                   <>
-                    What you get from{" "}
+                    Clear, respectful support from{" "}
                     <span className="text-primary">day one</span>.
                   </>
                 }
-                subtitle="A short list, kept honest. If we can't deliver on something for your situation, we'll tell you up front."
+                subtitle="We keep our promises simple: listen properly, communicate clearly and provide care that is matched to the person."
               />
             </div>
             <ul className="grid gap-3 rounded-[var(--radius-lg)] border border-border bg-surface p-6 md:p-8">
