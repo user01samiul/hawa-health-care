@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedStats from "@/components/ui/AnimatedStats";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -107,38 +108,43 @@ export default function WhoWeHelp() {
               subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf — we make your part easier."
             />
 
-            <dl className="mt-8 grid max-w-xl grid-cols-3 gap-4 sm:gap-6">
-              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
-                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  3
-                </dt>
-                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
-                  Audiences we
-                  <br />
-                  partner with
-                </dd>
-              </div>
-              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
-                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  24h
-                </dt>
-                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
-                  Service agreements
-                  <br />
-                  turnaround
-                </dd>
-              </div>
-              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
-                <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                  7+
-                </dt>
-                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
-                  Years in
-                  <br />
-                  healthcare
-                </dd>
-              </div>
-            </dl>
+            <AnimatedStats
+              className="mt-8"
+              stats={[
+                {
+                  value: 3,
+                  label: (
+                    <>
+                      Audiences we
+                      <br />
+                      partner with
+                    </>
+                  ),
+                },
+                {
+                  value: 24,
+                  suffix: "h",
+                  label: (
+                    <>
+                      Service agreements
+                      <br />
+                      turnaround
+                    </>
+                  ),
+                },
+                {
+                  value: 7,
+                  suffix: "+",
+                  label: (
+                    <>
+                      Years in
+                      <br />
+                      healthcare
+                    </>
+                  ),
+                },
+              ]}
+            />
           </div>
 
           <div className="relative hidden lg:col-span-5 lg:block">
