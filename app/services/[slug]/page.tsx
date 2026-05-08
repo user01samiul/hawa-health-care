@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "@/components/forms/ContactForm";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PageHero from "@/components/sections/PageHero";
@@ -203,33 +204,242 @@ export default async function ServiceDetailPage({
 
       <section className="bg-surface py-20 md:py-28">
         <Container>
-          <SectionHeading
-            eyebrow="Related supports"
-            title={
-              <>
-                You might also need{" "}
-                <span className="text-primary">these.</span>
-              </>
-            }
-            className="mb-12"
-          />
-          <ul className="grid gap-5 md:grid-cols-3">
-            {related.map((r) => (
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                eyebrow="Enquire now"
+                title={
+                  <>
+                    Ask about{" "}
+                    <span className="text-primary">{service.name}</span>.
+                  </>
+                }
+                subtitle="Tell us what you need and our team will respond within business hours — usually the same day."
+                titleClassName="sm:text-[2.4rem] lg:text-[3rem]"
+              />
+
+              <ul className="mt-8 space-y-4">
+                {[
+                  "Same-day or next-day onboarding where capacity allows",
+                  "Match-based support workers shaped to your goals",
+                  "Direct line to senior staff — no call-centre runaround",
+                ].map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-3 text-base leading-relaxed text-foreground-muted"
+                  >
+                    <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-secondary-soft text-secondary">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-3 w-3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10 rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Prefer to talk?
+                </p>
+                <a
+                  href="tel:+61000000000"
+                  className="mt-2 inline-flex items-baseline gap-2 text-2xl font-bold tracking-tight text-foreground hover:text-primary"
+                >
+                  Call us directly
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 self-center"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m13 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <p className="mt-2 text-sm text-foreground-muted">
+                  Mon–Fri, 9am–5pm AEST. Urgent referrals welcome.
+                </p>
+              </div>
+            </div>
+            <div className="lg:col-span-7">
+              <ContactForm
+                title={`Enquire about ${service.name}`}
+                defaultTopic={service.name}
+                submitLabel="Send enquiry"
+                messagePlaceholder={`Tell us what you need for ${service.name.toLowerCase()}.`}
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="relative isolate overflow-hidden bg-background py-20 md:py-28">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.45]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(17,75,115,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,75,115,0.05) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage:
+              "radial-gradient(ellipse 70% 50% at 50% 0%, black 30%, transparent 75%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 50% at 50% 0%, black 30%, transparent 75%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 right-[-10rem] -z-10 h-[26rem] w-[26rem] rounded-full bg-accent-100/40 blur-3xl"
+        />
+
+        <Container>
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading
+              eyebrow="Related supports"
+              title={
+                <>
+                  You might also need{" "}
+                  <span className="text-primary">these.</span>
+                </>
+              }
+              subtitle="Common pairings with this service — each available with the same fast onboarding and care."
+            />
+            <Link
+              href="/services"
+              className="hidden items-center gap-2 text-sm font-semibold text-primary md:inline-flex"
+            >
+              View all services
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m13 5 7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          <ul className="mt-12 grid gap-6 md:grid-cols-3 md:gap-5 lg:gap-6">
+            {related.map((r, i) => (
               <li key={r.slug}>
                 <Link
                   href={`/services/${r.slug}`}
-                  className="group flex h-full flex-col rounded-[var(--radius-lg)] border border-border bg-background p-7 shadow-[var(--shadow-xs)] transition-[transform,box-shadow] duration-[var(--duration-base)] hover:-translate-y-1 hover:shadow-[var(--shadow-md)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[var(--radius-xl)] border border-border bg-background shadow-[var(--shadow-xs)] transition-[transform,box-shadow,border-color] duration-[var(--duration-base)] hover:-translate-y-1 hover:border-brand-200 hover:shadow-[var(--shadow-lg)]"
                 >
-                  <h3 className="text-lg font-semibold text-foreground">{r.name}</h3>
-                  <p className="mt-3 flex-1 text-sm text-foreground-muted">{r.blurb}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                    Learn more
-                    <span aria-hidden className="transition-transform duration-[var(--duration-base)] group-hover:translate-x-1">→</span>
-                  </span>
+                  {/* Top accent bar */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 transition-transform duration-[var(--duration-slow)] group-hover:scale-x-100 ${
+                      i === 1 ? "bg-secondary" : "bg-primary"
+                    }`}
+                  />
+
+                  {/* Image header */}
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={r.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 28vw, (min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-[var(--duration-slow)] group-hover:scale-[1.04]"
+                    />
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 bg-gradient-to-t from-brand-900/55 via-brand-900/10 to-transparent"
+                    />
+
+                    {/* Index badge */}
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] border border-white/40 bg-white/85 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur-md">
+                      {String(i + 1).padStart(2, "0")} · Service
+                    </span>
+
+                    {/* Focus pill */}
+                    {r.focus ? (
+                      <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-[var(--radius-pill)] bg-secondary px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-foreground-inverse shadow-[var(--shadow-sm)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                        Focus service
+                      </span>
+                    ) : null}
+                  </div>
+
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <h3 className="text-lg font-semibold tracking-tight text-foreground sm:text-[1.2rem]">
+                      {r.name}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-foreground-muted">
+                      {r.blurb}
+                    </p>
+
+                    <div
+                      aria-hidden
+                      className="mt-5 h-px w-full bg-gradient-to-r from-border via-border to-transparent"
+                    />
+
+                    <div className="mt-5 inline-flex items-center gap-2 self-start text-sm font-semibold text-primary">
+                      <span className="relative">
+                        Learn more
+                        <span
+                          aria-hidden
+                          className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-[var(--duration-base)] group-hover:scale-x-100"
+                        />
+                      </span>
+                      <span className="grid h-7 w-7 place-items-center rounded-full bg-primary-soft text-primary transition-[background,color,transform] duration-[var(--duration-base)] group-hover:translate-x-0.5 group-hover:bg-primary group-hover:text-foreground-inverse">
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="h-3.5 w-3.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.4"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m13 5 7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               </li>
             ))}
           </ul>
+
+          <Link
+            href="/services"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary md:hidden"
+          >
+            View all services
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m13 5 7 7-7 7" />
+            </svg>
+          </Link>
         </Container>
       </section>
 

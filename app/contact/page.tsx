@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/forms/ContactForm";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Hawa Health Care. Same-day responses across Western Sydney — phone, email, or contact form.",
+    "Get in touch with Hawa Health Care. Same-day responses across Western Sydney - phone, email, or contact form.",
 };
 
 const SERVICE_AREAS = [
@@ -24,29 +25,6 @@ const SERVICE_AREAS = [
   "Campbelltown",
 ];
 
-const inputBase =
-  "w-full rounded-[var(--radius-sm)] border border-border bg-background px-4 py-3 text-sm text-foreground shadow-[var(--shadow-xs)] outline-none transition-colors placeholder:text-foreground-subtle focus:border-primary focus:ring-2 focus:ring-primary/15";
-
-function FieldLabel({
-  htmlFor,
-  required,
-  children,
-}: {
-  htmlFor: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label
-      htmlFor={htmlFor}
-      className="mb-1.5 block text-xs font-semibold uppercase tracking-[0.12em] text-foreground"
-    >
-      {children}
-      {required ? <span aria-hidden className="ml-1 text-secondary">*</span> : null}
-    </label>
-  );
-}
-
 export default function ContactPage() {
   return (
     <>
@@ -56,61 +34,18 @@ export default function ContactPage() {
         image="/thisisengineering-o6jUolZ7QJk-unsplash.jpg"
         title={
           <>
-            Real people, real responses —{" "}
+            Real people, real responses -{" "}
             <span className="text-primary">within hours</span>.
           </>
         }
-        subtitle="Whether it's a quick question, an urgent request, or you'd like to scope your plan — pick the channel that suits you best."
+        subtitle="Whether it's a quick question, an urgent request, or you'd like to scope your plan - pick the channel that suits you best."
       />
 
       <section className="py-20 md:py-28">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
-              <form className="space-y-6 rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)] sm:p-8 md:p-10">
-                <h2 className="text-xl font-semibold tracking-tight text-foreground">
-                  Send us a message
-                </h2>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <FieldLabel htmlFor="name" required>Your name</FieldLabel>
-                    <input id="name" name="name" type="text" required autoComplete="name" className={inputBase} />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="email" required>Email</FieldLabel>
-                    <input id="email" name="email" type="email" required autoComplete="email" className={inputBase} />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="phone">Phone</FieldLabel>
-                    <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputBase} placeholder="Optional" />
-                  </div>
-                  <div>
-                    <FieldLabel htmlFor="topic">I'm enquiring about</FieldLabel>
-                    <select id="topic" name="topic" defaultValue="" className={inputBase}>
-                      <option value="" disabled>Choose a topic</option>
-                      <option>Starting NDIS supports</option>
-                      <option>Switching providers</option>
-                      <option>Respite support</option>
-                      <option>Community participation</option>
-                      <option>Careers</option>
-                      <option>Something else</option>
-                    </select>
-                  </div>
-                </div>
-                <div>
-                  <FieldLabel htmlFor="message" required>Message</FieldLabel>
-                  <textarea id="message" name="message" rows={6} required className={inputBase} placeholder="Tell us a little about what you need." />
-                </div>
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="text-xs text-foreground-subtle">We respond within business hours, usually within 2–4 hours.</p>
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-primary px-7 py-3.5 text-base font-semibold text-foreground-inverse shadow-[var(--shadow-md)] transition-colors hover:bg-primary-hover"
-                  >
-                    Send message
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
 
             <aside className="lg:col-span-5">
@@ -129,7 +64,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold">Phone</p>
                         <a href="tel:+61000000000" className="text-brand-100 hover:text-foreground-inverse">(00) 0000 0000</a>
-                        <p className="mt-1 text-xs text-brand-100">Mon–Fri 8am–6pm AEST</p>
+                        <p className="mt-1 text-xs text-brand-100">Mon-Fri 8am-6pm AEST</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -142,7 +77,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold">Email</p>
                         <a href="mailto:hello@hawahealthcare.com.au" className="text-brand-100 hover:text-foreground-inverse">hello@hawahealthcare.com.au</a>
-                        <p className="mt-1 text-xs text-brand-100">Replies within 2–4 hours</p>
+                        <p className="mt-1 text-xs text-brand-100">Replies within 2-4 hours</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -154,7 +89,7 @@ export default function ContactPage() {
                       </span>
                       <div>
                         <p className="font-semibold">Service area</p>
-                        <p className="text-brand-100">Western Sydney — expanding across NSW</p>
+                        <p className="text-brand-100">Western Sydney - expanding across NSW</p>
                       </div>
                     </li>
                   </ul>
@@ -165,14 +100,14 @@ export default function ContactPage() {
                     Suburbs we cover
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-2">
-                    {SERVICE_AREAS.map((a) => (
-                      <li key={a} className="rounded-[var(--radius-pill)] border border-border bg-surface px-3 py-1.5 text-xs font-medium text-foreground-muted">
-                        {a}
+                    {SERVICE_AREAS.map((area) => (
+                      <li key={area} className="rounded-[var(--radius-pill)] border border-border bg-surface px-3 py-1.5 text-xs font-medium text-foreground-muted">
+                        {area}
                       </li>
                     ))}
                   </ul>
                   <p className="mt-5 text-xs text-foreground-subtle">
-                    Not on the list? <Link href="/contact" className="text-primary hover:underline">Ask us</Link> — we expand routinely based on demand.
+                    Not on the list? <Link href="/contact" className="text-primary hover:underline">Ask us</Link> - we expand routinely based on demand.
                   </p>
                 </div>
 
