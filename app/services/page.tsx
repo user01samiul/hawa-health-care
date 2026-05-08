@@ -19,6 +19,7 @@ export default function ServicesPage() {
       <PageHero
         breadcrumbs={[{ href: "/", label: "Home" }, { label: "Services" }]}
         eyebrow="Our services"
+        image="/centre-for-ageing-better-c-LWLkJIV6Q-unsplash.jpg"
         title={
           <>
             Four core supports.{" "}

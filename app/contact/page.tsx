@@ -53,6 +53,7 @@ export default function ContactPage() {
       <PageHero
         breadcrumbs={[{ href: "/", label: "Home" }, { label: "Contact" }]}
         eyebrow="Talk to us"
+        image="/thisisengineering-o6jUolZ7QJk-unsplash.jpg"
         title={
           <>
             Real people, real responses —{" "}

@@ -9,7 +9,7 @@ export default function EligibilityBanner() {
       className="relative isolate overflow-hidden"
     >
       <Image
-        src="/senior-father-wheelchair-young-son-walk.jpg"
+        src="/front-view-woman-girl-couch.jpg"
         alt=""
         fill
         sizes="100vw"

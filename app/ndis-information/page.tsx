@@ -58,6 +58,7 @@ export default function NdisInformationPage() {
       <PageHero
         breadcrumbs={[{ href: "/", label: "Home" }, { label: "NDIS Information" }]}
         eyebrow="NDIS, in plain English"
+        image="/grab-fsDeUsH79OQ-unsplash.jpg"
         title={
           <>
             Understand your plan,{" "}

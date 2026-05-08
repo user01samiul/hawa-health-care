@@ -150,7 +150,7 @@ export default function WhoWeHelp() {
           <div className="relative hidden lg:col-span-5 lg:block">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[var(--radius-xl)] border border-border shadow-[var(--shadow-lg)]">
               <Image
-                src="/senior-father-wheelchair-young-son-walk.jpg"
+                src="/smiley-man-woman-posing.jpg"
                 alt="Hawa Health Care worker supporting a participant out in the community."
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

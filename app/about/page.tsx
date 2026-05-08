@@ -72,6 +72,7 @@ export default function AboutPage() {
       <PageHero
         breadcrumbs={[{ href: "/", label: "Home" }, { label: "About" }]}
         eyebrow="About Hawa Health Care"
+        image="/tailored ndis.jpg"
         title={
           <>
             Care that moves at your pace —{" "}

@@ -54,6 +54,7 @@ export default function ReferralsPage() {
       <PageHero
         breadcrumbs={[{ href: "/", label: "Home" }, { label: "Referrals" }]}
         eyebrow="Refer a participant"
+        image="/thisisengineering-6DSItOWspGY-unsplash.jpg"
         title={
           <>
             Refer in seconds.{" "}
