@@ -50,10 +50,10 @@ const VALUES = [
 ];
 
 const STATS = [
-  { value: "24h", label: "Average onboarding turnaround" },
-  { value: "7+", label: "Years in healthcare" },
-  { value: "Sydney", label: "Western — expanding NSW" },
-  { value: "100%", label: "Named, matched workers" },
+  { value: "7+", label: "Years of healthcare and support experience" },
+  { value: "Western Sydney", label: "Supporting participants and families locally" },
+  { value: "Person-centred", label: "Support shaped around individual goals" },
+  { value: "Trusted care", label: "Matched workers and clear communication" },
 ];
 
 const PROMISE = [
@@ -86,20 +86,20 @@ export default function AboutPage() {
                 eyebrow="Who we are"
                 title={
                   <>
-                    A small team with deep healthcare experience and a bias for{" "}
-                    <span className="text-primary">action</span>.
+                    Care that feels personal, reliable and{" "}
+                    <span className="text-primary">built around you</span>.
                   </>
                 }
               />
               <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground-muted sm:text-lg">
                 <p>
-                  Hawa Health Care was founded to fix a problem participants kept telling us about — long waits, generic plans, and support that arrived too late to matter. We built our process around the opposite: rapid onboarding, named workers, and plans shaped to the person.
+                  Hawa Health Care provides NDIS support that is centred on trust, consistency and genuine care. We work with participants, families and support coordinators to deliver support that respects each person&apos;s goals, routines, culture and individual needs.
                 </p>
                 <p>
-                  Our team brings more than seven years of experience across the Australian health sector — from in-home care to community engagement. We know what good NDIS support looks like, and what gets in the way of it.
+                  Our focus is not just on providing a service. It is on building the right support relationship. We take the time to understand what matters to each participant, match them with suitable support workers and maintain clear communication with the people involved in their care.
                 </p>
                 <p>
-                  Today we serve participants across Western Sydney, with capacity expanding across NSW. Whether you need urgent respite, ongoing community participation, or steady help at home — we're set up to start fast and stay consistent.
+                  With experience across the Australian health and community care sector, our team understands the importance of safe, respectful and person-centred support. Whether it is help at home, community participation, personal care, transport or respite, we aim to provide support that helps participants feel confident, included and in control.
                 </p>
               </div>
             </div>
@@ -112,10 +112,10 @@ export default function AboutPage() {
                 <dl className="mt-5 grid grid-cols-2 gap-5">
                   {STATS.map((s) => (
                     <div key={s.label}>
-                      <dt className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                      <dt className="text-xl font-bold leading-tight tracking-tight text-foreground sm:text-2xl">
                         {s.value}
                       </dt>
-                      <dd className="mt-1 text-xs text-foreground-subtle">{s.label}</dd>
+                      <dd className="mt-1.5 text-xs leading-snug text-foreground-subtle">{s.label}</dd>
                     </div>
                   ))}
                 </dl>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   href="/contact"
                   className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-primary px-5 py-3 text-sm font-semibold text-foreground-inverse shadow-[var(--shadow-sm)] transition-colors hover:bg-primary-hover"
                 >
-                  Talk to us today
+                  Speak With Our Team
                 </Link>
               </div>
             </aside>
