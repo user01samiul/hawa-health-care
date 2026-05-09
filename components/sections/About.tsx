@@ -25,7 +25,7 @@ export default function About() {
       className="relative bg-background py-20 md:py-28"
     >
       <Container className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
+        <div className="hidden lg:col-span-5 lg:block">
           <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] bg-surface shadow-[var(--shadow-md)]">
               <Image
@@ -57,7 +57,27 @@ export default function About() {
             subtitle="We're a Western Sydney team built around one idea: the best NDIS outcomes happen when participants are heard, plans are personal, and support arrives when it's promised. With 7+ years in the health industry, we've built our service around speed, reliability, and real human care."
           />
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 mb-2 lg:hidden">
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-xl)] bg-surface shadow-[var(--shadow-md)]">
+                <Image
+                  src="/ortopediatri-cocuk-ortopedi-akademisi-rXqfl7MKEJ4-unsplash.jpg"
+                  alt="A Hawa Health Care support worker walking with a participant in their community."
+                  fill
+                  sizes="(min-width: 640px) 60vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border bg-background px-4 py-2.5 shadow-[var(--shadow-md)]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary sm:text-[11px]">
+                  Western Sydney &mdash; expanding NSW
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:mt-8">
             {HIGHLIGHTS.map((h) => (
               <li
                 key={h.title}
