@@ -29,7 +29,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Communication is honest and consistent. Notes after every shift, a real person on the phone — that's been the difference for our family.",
+      "Communication is honest and consistent. Notes after every shift, a real person on the phone. That's been the difference for our family.",
     name: "Priya N.",
     role: "Family member",
     initials: "PN",
@@ -45,7 +45,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "I've placed several clients with Hawa. Onboarding is fast, paperwork is tidy, and they actually flag risks early — coordinator gold.",
+      "I've placed several clients with Hawa. Onboarding is fast, paperwork is tidy, and they actually flag risks early. Coordinator gold.",
     name: "Aisha O.",
     role: "Support coordinator",
     initials: "AO",
@@ -69,7 +69,7 @@ export default function Testimonials() {
               <span className="text-primary">coordinators</span>.
             </>
           }
-          subtitle="A few of the people who've worked with us. Names changed for privacy — full case studies available on request."
+          subtitle="A few of the people who've worked with us. Names changed for privacy. Full case studies available on request."
           className="mb-14"
         />
 

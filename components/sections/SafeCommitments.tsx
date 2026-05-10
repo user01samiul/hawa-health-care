@@ -3,10 +3,10 @@ import Container from "@/components/ui/Container";
 
 const PRINCIPLES = [
   "Putting each participant's safety, choice and dignity at the centre of every decision and roster.",
-  "Matching support workers carefully — culture, language, gender preference — so support feels safe from the first shift.",
-  "Training every worker to recognise, prevent and respond to abuse, neglect or harm — and to escalate without hesitation.",
+  "Matching support workers carefully (culture, language, gender preference) so support feels safe from the first shift.",
+  "Training every worker to recognise, prevent and respond to abuse, neglect or harm, and to escalate without hesitation.",
   "Keeping clear, written records and post-shift notes so families and coordinators always know what's happened.",
-  "Inviting feedback openly and acting on it — including the complaints that point back at us.",
+  "Inviting feedback openly and acting on it, including the complaints that point back at us.",
   "Maintaining a zero-tolerance stance on discrimination, exploitation, or any breach of the NDIS Code of Conduct.",
 ];
 
@@ -38,7 +38,7 @@ export default function SafeCommitments() {
               At Hawa Health Care, the safety, dignity and voice of every
               participant come before everything else. We align our work with
               the NDIS Code of Conduct, the NDIS Practice Standards, and the
-              National Principles for Child Safe Organisations — and we hold
+              National Principles for Child Safe Organisations, and we hold
               ourselves accountable when something needs to change.
             </p>
 
@@ -95,8 +95,8 @@ export default function SafeCommitments() {
             </ul>
 
             <p className="mt-6 max-w-2xl text-sm leading-relaxed text-foreground/80">
-              Our promise is simple: every participant — and every family
-              supporting them — deserves a provider that's transparent,
+              Our promise is simple: every participant, and every family
+              supporting them, deserves a provider that's transparent,
               accountable, and easy to raise a concern with.
             </p>
           </div>

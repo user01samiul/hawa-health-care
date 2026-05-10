@@ -65,11 +65,11 @@ export default function FeedbackPage() {
         eyebrow="Feedback & complaints"
         title={
           <>
-            Tell us what worked —{" "}
+            Tell us what worked,{" "}
             <span className="text-primary">and what didn't</span>.
           </>
         }
-        subtitle="Honest feedback is how we get better. Compliments, suggestions, complaints — share whatever you need to and we'll handle it carefully."
+        subtitle="Honest feedback is how we get better. Compliments, suggestions, complaints: share whatever you need to and we'll handle it carefully."
       />
 
       <section className="py-20 md:py-28">
@@ -83,11 +83,11 @@ export default function FeedbackPage() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <FieldLabel htmlFor="name">Your name</FieldLabel>
-                    <input id="name" name="name" type="text" autoComplete="name" className={inputBase} placeholder="Optional — anonymous OK" />
+                    <input id="name" name="name" type="text" autoComplete="name" className={inputBase} placeholder="Optional, anonymous OK" />
                   </div>
                   <div>
                     <FieldLabel htmlFor="contact">Phone or email</FieldLabel>
-                    <input id="contact" name="contact" type="text" className={inputBase} placeholder="Optional — only if you'd like a reply" />
+                    <input id="contact" name="contact" type="text" className={inputBase} placeholder="Optional, only if you'd like a reply" />
                   </div>
                   <div>
                     <FieldLabel htmlFor="role">I am a</FieldLabel>
@@ -172,7 +172,7 @@ export default function FeedbackPage() {
                   </li>
                 </ul>
                 <p className="mt-4 text-xs text-foreground-subtle">
-                  Or talk to us first — <Link href="/contact" className="text-primary hover:underline">contact us</Link> any time.
+                  Or talk to us first: <Link href="/contact" className="text-primary hover:underline">contact us</Link> any time.
                 </p>
               </div>
             </aside>

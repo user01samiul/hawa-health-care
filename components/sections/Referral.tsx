@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const URGENCY = [
-  { value: "urgent", label: "Urgent — within 24h" },
+  { value: "urgent", label: "Urgent (within 24h)" },
   { value: "soon", label: "This week" },
   { value: "flexible", label: "Flexible" },
 ];
@@ -82,7 +82,7 @@ export default function Referral() {
           >
             <SectionHeading
               title="Quick referral"
-              subtitle="The full form lives on our referrals page — pre-fill it here in 30 seconds."
+              subtitle="The full form lives on our referrals page. Pre-fill it here in 30 seconds."
               titleClassName="!text-2xl sm:!text-3xl lg:!text-3xl"
             />
 

@@ -84,7 +84,7 @@ const helveticaNow = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Fast, Personalised NDIS Support in Western Sydney`,
+    default: `${SITE.name} | Fast, Personalised NDIS Support in Western Sydney`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -109,13 +109,13 @@ export const metadata: Metadata = {
     locale: SITE.locale,
     url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} — NDIS Registered Service Provider, Western Sydney`,
+    title: `${SITE.name} | NDIS Registered Service Provider, Western Sydney`,
     description: SITE.description,
     images: [...SITE.openGraph.images],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Fast, Personalised NDIS Support`,
+    title: `${SITE.name} | Fast, Personalised NDIS Support`,
     description: SITE.description,
     images: SITE.openGraph.images.map((i) => i.url),
   },

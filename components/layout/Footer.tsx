@@ -95,7 +95,7 @@ export default function Footer() {
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                 </span>
-                <span>Western Sydney, NSW &mdash; expanding across NSW</span>
+                <span>Western Sydney, NSW. Expanding across NSW.</span>
               </li>
             </ul>
           </div>

@@ -18,12 +18,12 @@ const QUICK_LINKS = [
   {
     href: "/referrals",
     title: "Make a referral",
-    body: "Refer a participant — fast onboarding, no chasing.",
+    body: "Refer a participant for fast onboarding, no chasing.",
   },
   {
     href: "/contact",
     title: "Contact us",
-    body: "Talk to our team — usually same-day response.",
+    body: "Talk to our team for a same-day response.",
   },
 ];
 

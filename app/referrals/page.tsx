@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const PLAN_TYPES = ["Self-managed", "Plan-managed", "NDIA-managed"] as const;
 const URGENCY = [
-  { value: "urgent", label: "Urgent — start today / tomorrow" },
+  { value: "urgent", label: "Urgent (start today / tomorrow)" },
   { value: "this-week", label: "This week" },
   { value: "this-month", label: "Within the next 30 days" },
   { value: "planning", label: "Planning ahead" },
@@ -22,7 +22,7 @@ const URGENCY = [
 const SUPPORT_POINTS = [
   "Service agreements within hours",
   "Capacity check while you're on the phone",
-  "Direct line to a coordinator — not a call centre",
+  "Direct line to a coordinator, not a call centre",
   "Continuity notes after every shift",
 ];
 
@@ -62,7 +62,7 @@ export default function ReferralsPage() {
             <span className="text-primary">We'll handle the rest</span>.
           </>
         }
-        subtitle="Coordinators, families and self-referring participants — fill out the form below and we'll respond within hours, with capacity confirmed and next steps clear."
+        subtitle="Coordinators, families and self-referring participants: fill out the form below and we'll respond within hours, with capacity confirmed and next steps clear."
       />
 
       <section className="py-20 md:py-28">
@@ -244,7 +244,7 @@ export default function ReferralsPage() {
                     name="notes"
                     rows={5}
                     className={inputBase}
-                    placeholder="Anything else we should know — preferences, communication needs, current supports, urgency context."
+                    placeholder="Anything else we should know: preferences, communication needs, current supports, urgency context."
                   />
                 </div>
 
@@ -286,7 +286,7 @@ export default function ReferralsPage() {
                     Call our intake line.
                   </p>
                   <p className="mt-2 text-sm text-brand-100">
-                    Faster than email for urgent referrals — we&apos;ll confirm capacity on the call.
+                    Faster than email for urgent referrals. We&apos;ll confirm capacity on the call.
                   </p>
                   <a
                     href={`tel:${SITE.phone}`}

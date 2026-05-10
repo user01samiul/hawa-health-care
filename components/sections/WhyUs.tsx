@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const REASONS = [
   {
     title: "Same-day onboarding",
-    body: "Most participants are supported within 24 hours of first contact. We hold capacity open so the right care arrives fast — no drawn-out paperwork, no missed weeks.",
+    body: "Most participants are supported within 24 hours of first contact. We hold capacity open so the right care arrives fast, with no drawn-out paperwork and no missed weeks.",
     stat: "<24h",
     icon: (
       <>
@@ -16,7 +16,7 @@ const REASONS = [
   },
   {
     title: "Tailored support plans",
-    body: "Every plan is built around the participant — their routines, the people in their life, and the goals that actually matter to them.",
+    body: "Every plan is built around the participant, their routines, the people in their life, and the goals that actually matter to them.",
     stat: "1:1",
     icon: (
       <>
@@ -39,7 +39,7 @@ const REASONS = [
   },
   {
     title: "Reliable support workers",
-    body: "Vetted, trained and matched intentionally — not pulled from a casual pool. Participants see the same trusted faces, week after week.",
+    body: "Vetted, trained and matched intentionally, not pulled from a casual pool. Participants see the same trusted faces, week after week.",
     stat: "100%",
     icon: (
       <>
@@ -50,7 +50,7 @@ const REASONS = [
   },
   {
     title: "Strong communication",
-    body: "Clear updates for participants, families, and support coordinators — every step of the plan, no chasing required.",
+    body: "Clear updates for participants, families, and support coordinators at every step of the plan, with no chasing required.",
     stat: "24/7",
     icon: (
       <>
@@ -86,7 +86,7 @@ export default function WhyUs() {
               <span className="text-primary">refer to us</span>.
             </>
           }
-          subtitle="Real differentiators — not generic claims. This is how we keep our promise of fast, reliable, and personalised support."
+          subtitle="Real differentiators, not generic claims. This is how we keep our promise of fast, reliable, and personalised support."
           className="mb-12 md:mb-16"
         />
 
@@ -129,7 +129,7 @@ export default function WhyUs() {
 
                 <p className="mt-6 max-w-md text-sm leading-relaxed text-brand-100 md:text-base">
                   If we can&apos;t deliver on this promise for a participant,
-                  we&apos;ll be the first to tell you — and we&apos;ll help find
+                  we&apos;ll be the first to tell you, and we&apos;ll help find
                   the right alternative.
                 </p>
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const VALUES = [
   {
     title: "Personalised",
-    body: "Support shaped around each participant's goals, routines, culture and preferences — never a one-size-fits-all approach.",
+    body: "Support shaped around each participant's goals, routines, culture and preferences, never a one-size-fits-all approach.",
     icon: <path d="M12 21s-7-4.35-7-10a4.5 4.5 0 0 1 8-2.83A4.5 4.5 0 0 1 19 11c0 5.65-7 10-7 10Z" />,
   },
   {

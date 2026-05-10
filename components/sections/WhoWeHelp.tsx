@@ -47,7 +47,7 @@ const AUDIENCES = [
     index: "03",
     tag: "For coordinators",
     title: "Support coordinators",
-    body: "A reliable provider for your participants — fast quotes, clean reporting, no chasing.",
+    body: "A reliable provider for your participants: fast quotes, clean reporting, no chasing.",
     points: [
       "Capacity for urgent referrals",
       "Service agreements within 24h",
@@ -105,7 +105,7 @@ export default function WhoWeHelp() {
                   <span className="text-primary">participant&apos;s plan</span>.
                 </>
               }
-              subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf — we make your part easier."
+              subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf, we make your part easier."
             />
 
             <AnimatedStats
@@ -173,7 +173,7 @@ export default function WhoWeHelp() {
               {/* Caption card — bottom */}
               <div className="absolute inset-x-4 bottom-4 rounded-[var(--radius-md)] border border-white/30 bg-white/15 p-4 backdrop-blur-md">
                 <p className="text-sm font-semibold leading-snug text-white">
-                  &ldquo;Real support, real continuity — out where life
+                  &ldquo;Real support, real continuity, out where life
                   actually happens.&rdquo;
                 </p>
                 <p className="mt-1 text-xs text-white/80">
@@ -319,7 +319,7 @@ export default function WhoWeHelp() {
                 Not sure where you fit?
               </p>
               <p className="mt-0.5 text-sm text-foreground-muted">
-                Tell us about the participant — we&apos;ll point you the right
+                Tell us about the participant. We&apos;ll point you the right
                 way, fast.
               </p>
             </div>

@@ -32,7 +32,7 @@ const SERVICES = [
   {
     slug: "domestic-assistance",
     name: "Domestic Assistance",
-    blurb: "Cleaning, laundry, meal prep — a calm, well-kept home.",
+    blurb: "Cleaning, laundry, meal prep for a calm, well-kept home.",
     image: "/services/domestic assistance.png",
     icon: (
       <>
@@ -74,7 +74,7 @@ export default function Services() {
                 <span className="text-primary">one provider</span>.
               </>
             }
-            subtitle="Four core services across personal care, social and community access, domestic care and respite — coordinated by one team that actually knows your plan."
+            subtitle="Four core services across personal care, social and community access, domestic care and respite, coordinated by one team that actually knows your plan."
           />
           <Link
             href="/services"

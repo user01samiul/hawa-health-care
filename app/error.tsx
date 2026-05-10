@@ -71,7 +71,7 @@ export default function Error({ error, unstable_retry }: ErrorProps) {
             <span className="text-primary">error</span>.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground-muted sm:text-lg">
-            Our team has been notified. Try again — if it keeps happening,
+            Our team has been notified. Try again. If it keeps happening,
             please get in touch and we&apos;ll help directly.
           </p>
 

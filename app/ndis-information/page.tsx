@@ -9,13 +9,13 @@ import FaqList from "@/components/sections/FaqList";
 export const metadata: Metadata = {
   title: "NDIS Information",
   description:
-    "What the NDIS is, who's eligible, and how plan management works — explained in plain English by Hawa Health Care.",
+    "What the NDIS is, who's eligible, and how plan management works, explained in plain English by Hawa Health Care.",
 };
 
 const PLAN_TYPES = [
   {
     title: "Self-managed",
-    body: "You manage the funds yourself. Most flexibility and choice of providers — including providers that aren't NDIS-registered.",
+    body: "You manage the funds yourself. Most flexibility and choice of providers, including providers that aren't NDIS-registered.",
     points: ["Pay providers directly", "Keep your own invoices and receipts", "Maximum flexibility"],
   },
   {
@@ -25,7 +25,7 @@ const PLAN_TYPES = [
   },
   {
     title: "NDIA-managed",
-    body: "The NDIA pays your providers directly. You can only use NDIS-registered providers — Hawa Health Care included.",
+    body: "The NDIA pays your providers directly. You can only use NDIS-registered providers, Hawa Health Care included.",
     points: ["No invoices to handle", "Registered providers only", "Simplest day-to-day option"],
   },
 ];
@@ -84,10 +84,10 @@ export default function NdisInformationPage() {
               />
               <div className="mt-6 space-y-5 text-base leading-relaxed text-foreground-muted sm:text-lg">
                 <p>
-                  The National Disability Insurance Scheme (NDIS) provides funding to eligible Australians under 65 with a permanent and significant disability. Funds are used to access the supports and services that help participants live the life they want — at home, in the community, and at work.
+                  The National Disability Insurance Scheme (NDIS) provides funding to eligible Australians under 65 with a permanent and significant disability. Funds are used to access the supports and services that help participants live the life they want, at home, in the community, and at work.
                 </p>
                 <p>
-                  Plans are individual: built around the participant's goals, not a one-size-fits-all package. You decide which providers to engage and how to spend the funded supports — within the categories and amounts agreed with the NDIA.
+                  Plans are individual: built around the participant's goals, not a one-size-fits-all package. You decide which providers to engage and how to spend the funded supports, within the categories and amounts agreed with the NDIA.
                 </p>
                 <p>
                   Hawa Health Care is a registered NDIS provider delivering core supports across Western Sydney. We work with self-, plan-, and NDIA-managed participants every week.
@@ -187,7 +187,7 @@ export default function NdisInformationPage() {
                     <span className="text-primary">ask us most</span>.
                   </>
                 }
-                subtitle="If your question isn't answered here, ask away — we'll write back the same day."
+                subtitle="If your question isn't answered here, ask away and we'll write back the same day."
               />
             </div>
             <FaqList items={FAQ} />

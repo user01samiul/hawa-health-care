@@ -4,7 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const POINTS = [
   {
     title: "Same-day or next-day onboarding",
-    body: "Most participants are onboarded within 24 hours of first contact — no drawn-out paperwork.",
+    body: "Most participants are onboarded within 24 hours of first contact, with no drawn-out paperwork.",
     icon: (
       <>
         <path d="M12 2v4" />
@@ -30,7 +30,7 @@ const POINTS = [
   },
   {
     title: "Quick response for urgent support",
-    body: "Hospital discharge, sudden plan change, carer breakdown — call us and we mobilise fast.",
+    body: "Hospital discharge, sudden plan change, carer breakdown: call us and we mobilise fast.",
     icon: (
       <>
         <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />

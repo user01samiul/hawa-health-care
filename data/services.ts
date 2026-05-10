@@ -15,7 +15,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Social & Community Participation",
     blurb: "Get out, stay social, and build the connections that matter.",
     description:
-      "One of our focus services. We help you take part in the activities, groups and outings that make life feel full — from coffee catch-ups to regular community programs. Support is built around what you actually want to do, not a generic timetable.",
+      "One of our focus services. We help you take part in the activities, groups and outings that make life feel full, from coffee catch-ups to regular community programs. Support is built around what you actually want to do, not a generic timetable.",
     whoFor: [
       "Participants wanting to build social confidence",
       "People seeking to access local events, classes or groups",
@@ -36,7 +36,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Personal Care",
     blurb: "Respectful, dignified support for showering, dressing and grooming.",
     description:
-      "Personal care delivered with the dignity and respect it deserves. We match workers carefully — same-gender preferences, language, cultural fit — so personal support feels safe and predictable from day one.",
+      "Personal care delivered with the dignity and respect it deserves. We match workers carefully (same-gender preferences, language, cultural fit) so personal support feels safe and predictable from day one.",
     whoFor: [
       "Participants who need help with bathing, dressing or grooming",
       "People with mobility, sensory or cognitive support needs",
@@ -54,7 +54,7 @@ export const SERVICES: ServiceContent[] = [
   {
     slug: "domestic-assistance",
     name: "Domestic Assistance",
-    blurb: "Cleaning, laundry, meal prep — a calm, well-kept home.",
+    blurb: "Cleaning, laundry, meal prep for a calm, well-kept home.",
     description:
       "We help keep the home running so you can focus on the parts of life you enjoy. From regular cleaning to laundry and meal prep, support is steady, reliable, and shaped to how you like things done.",
     whoFor: [
@@ -76,7 +76,7 @@ export const SERVICES: ServiceContent[] = [
     name: "Respite Support",
     blurb: "Trusted short-term care that lets families and carers recharge.",
     description:
-      "One of our focus services. Trusted short-term care for participants while their primary carer takes time to rest, work, or attend to other things. Whether it's a few hours or a few days, we step in confidently — and step out cleanly when you're ready.",
+      "One of our focus services. Trusted short-term care for participants while their primary carer takes time to rest, work, or attend to other things. Whether it's a few hours or a few days, we step in confidently, and step out cleanly when you're ready.",
     whoFor: [
       "Families and carers needing planned or urgent respite",
       "Participants comfortable with short-term substitute support",

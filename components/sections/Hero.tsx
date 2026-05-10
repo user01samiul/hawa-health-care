@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 const TRUST_POINTS = [
   "Same-day / next-day onboarding",
   "7+ years healthcare experience",
-  "Western Sydney — expanding across NSW",
+  "Western Sydney, expanding across NSW",
 ];
 
 export default function Hero() {

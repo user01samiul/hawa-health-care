@@ -215,7 +215,7 @@ export default async function ServiceDetailPage({
                     <span className="text-primary">{service.name}</span>.
                   </>
                 }
-                subtitle="Tell us what you need and our team will respond within business hours — usually the same day."
+                subtitle="Tell us what you need and our team will respond within business hours, usually the same day."
                 titleClassName="sm:text-[2.4rem] lg:text-[3rem]"
               />
 
@@ -223,7 +223,7 @@ export default async function ServiceDetailPage({
                 {[
                   "Same-day or next-day onboarding where capacity allows",
                   "Match-based support workers shaped to your goals",
-                  "Direct line to senior staff — no call-centre runaround",
+                  "Direct line to senior staff, not a call centre",
                 ].map((point) => (
                   <li
                     key={point}
@@ -321,7 +321,7 @@ export default async function ServiceDetailPage({
                   <span className="text-primary">these.</span>
                 </>
               }
-              subtitle="Common pairings with this service — each available with the same fast onboarding and care."
+              subtitle="Common pairings with this service, each available with the same fast onboarding and care."
             />
             <Link
               href="/services"

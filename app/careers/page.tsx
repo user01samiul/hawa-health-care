@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const PERKS = [
   {
     title: "Rosters that respect you",
-    body: "Built around your availability — not the other way around.",
+    body: "Built around your availability, not the other way around.",
     icon: (
       <>
         <rect x="3" y="4" width="18" height="18" rx="3" />
@@ -23,7 +23,7 @@ const PERKS = [
   },
   {
     title: "Ongoing training",
-    body: "Manual handling, mental health first aid, infection control — paid time, no fluff.",
+    body: "Manual handling, mental health first aid, infection control: paid time, no fluff.",
     icon: (
       <>
         <path d="M12 14 4 9l8-5 8 5-8 5z" />
@@ -42,7 +42,7 @@ const PERKS = [
   },
   {
     title: "Pay that's clear",
-    body: "Award-aligned, paid on time, with penalties paid as penalties — no surprises.",
+    body: "Award-aligned, paid on time, with penalties paid as penalties, no surprises.",
     icon: (
       <>
         <circle cx="12" cy="12" r="10" />
@@ -55,7 +55,7 @@ const PERKS = [
 
 const ROLES = [
   {
-    title: "Support Worker — Western Sydney",
+    title: "Support Worker, Western Sydney",
     type: "Casual / Part-time",
     location: "Blacktown, Mount Druitt, Parramatta",
     body: "Day-to-day NDIS support across community access, personal care and respite.",
@@ -134,7 +134,7 @@ export default function CareersPage() {
                 <span className="text-primary">that's rare</span>.
               </>
             }
-            subtitle="No empty promises about culture. Just rosters, training and pay that work — so you can focus on the participants in front of you."
+            subtitle="No empty promises about culture. Just rosters, training and pay that work, so you can focus on the participants in front of you."
             className="mb-12"
           />
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +168,7 @@ export default function CareersPage() {
                 <span className="text-primary">Western Sydney</span>.
               </>
             }
-            subtitle="Don't see your role? Submit an EOI below — we hire continuously."
+            subtitle="Don't see your role? Submit an EOI below. We hire continuously."
             className="mb-12"
           />
           <ul className="grid gap-5 md:grid-cols-3">

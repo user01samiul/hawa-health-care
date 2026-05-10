@@ -43,7 +43,7 @@ export default function FinalCta() {
               Ready to get started?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-brand-100 sm:text-lg">
-              Tell us what you need — we&apos;ll respond within hours and have
+              Tell us what you need, and we&apos;ll respond within hours and have
               support in place fast. No obligation, no pressure.
             </p>
 

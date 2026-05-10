@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 const HIGHLIGHTS = [
   {
     title: "Participant-centred",
-    body: "Every plan is built around the person — their routines, goals, and the people who matter to them.",
+    body: "Every plan is built around the person, their routines, goals, and the people who matter to them.",
   },
   {
     title: "Built for independence",
@@ -14,7 +14,7 @@ const HIGHLIGHTS = [
   },
   {
     title: "Goal-driven",
-    body: "Your NDIS goals shape every shift — we measure progress, not hours.",
+    body: "Your NDIS goals shape every shift. We measure progress, not hours.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function About() {
 
             <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border bg-background px-4 py-2.5 shadow-[var(--shadow-md)]">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary sm:text-[11px]">
-                Western Sydney &mdash; expanding NSW
+                Western Sydney, expanding NSW
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function About() {
 
               <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border bg-background px-4 py-2.5 shadow-[var(--shadow-md)]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary sm:text-[11px]">
-                  Western Sydney &mdash; expanding NSW
+                  Western Sydney, expanding NSW
                 </p>
               </div>
             </div>

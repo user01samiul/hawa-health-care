@@ -10,7 +10,7 @@ import { SERVICES } from "@/data/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Four core NDIS services delivered by one coordinated team across Western Sydney — personal care, respite, social and community access, and domestic care.",
+    "Four core NDIS services delivered by one coordinated team across Western Sydney: personal care, respite, social and community access, and domestic care.",
 };
 
 export default function ServicesPage() {
@@ -95,7 +95,7 @@ export default function ServicesPage() {
               {[
                 {
                   title: "Matched, not assigned",
-                  body: "Workers are matched to your preferences — gender, language, cultural fit, communication style — before the first shift.",
+                  body: "Workers are matched to your preferences (gender, language, cultural fit, communication style) before the first shift.",
                 },
                 {
                   title: "Continuity by default",
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                 },
                 {
                   title: "Notes after every shift",
-                  body: "Short, useful handover notes shared with you and your coordinator — so nothing slips through gaps.",
+                  body: "Short, useful handover notes shared with you and your coordinator, so nothing slips through gaps.",
                 },
                 {
                   title: "Plans that flex",
