@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
+import { SITE } from "@/lib/site";
 
 const QUICK_LINKS = [
   { href: "/about", label: "About Us" },
@@ -71,8 +72,8 @@ export default function Footer() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
                   </svg>
                 </span>
-                <a href="tel:+61000000000" className="hover:text-primary">
-                  (00) 0000 0000
+                <a href={`tel:${SITE.phone}`} className="hover:text-primary">
+                  {SITE.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -82,8 +83,8 @@ export default function Footer() {
                     <path d="m22 6-10 7L2 6" />
                   </svg>
                 </span>
-                <a href="mailto:hello@hawahealthcare.com.au" className="hover:text-primary">
-                  hello@hawahealthcare.com.au
+                <a href={`mailto:${SITE.email}`} className="hover:text-primary">
+                  {SITE.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">

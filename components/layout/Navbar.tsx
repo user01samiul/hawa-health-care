@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import Logo from "@/components/ui/Logo";
+import { SITE } from "@/lib/site";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -75,7 +76,7 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Link
-            href="tel:+61000000000"
+            href={`tel:${SITE.phone}`}
             className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] px-4 py-2 text-base font-medium text-foreground-muted transition-colors hover:text-primary"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -182,7 +183,7 @@ export default function Navbar() {
             Make a Referral
           </Link>
           <Link
-            href="tel:+61000000000"
+            href={`tel:${SITE.phone}`}
             onClick={() => setOpen(false)}
             className="inline-flex items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border px-4 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary"
           >

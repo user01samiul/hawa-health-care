@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
 import { SERVICES } from "@/data/services";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Make a Referral",
@@ -288,10 +289,10 @@ export default function ReferralsPage() {
                     Faster than email for urgent referrals — we&apos;ll confirm capacity on the call.
                   </p>
                   <a
-                    href="tel:+61000000000"
+                    href={`tel:${SITE.phone}`}
                     className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] bg-background px-5 py-3 text-sm font-semibold text-primary shadow-[var(--shadow-sm)] transition-colors hover:bg-surface"
                   >
-                    (00) 0000 0000
+                    {SITE.phoneDisplay}
                   </a>
                 </div>
 

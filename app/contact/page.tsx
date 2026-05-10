@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactForm from "@/components/forms/ContactForm";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/sections/PageHero";
+import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -63,7 +64,7 @@ export default function ContactPage() {
                       </span>
                       <div>
                         <p className="font-semibold">Phone</p>
-                        <a href="tel:+61000000000" className="text-brand-100 hover:text-foreground-inverse">(00) 0000 0000</a>
+                        <a href={`tel:${SITE.phone}`} className="text-brand-100 hover:text-foreground-inverse">{SITE.phoneDisplay}</a>
                         <p className="mt-1 text-xs text-brand-100">Mon-Fri 8am-6pm AEST</p>
                       </div>
                     </li>
@@ -76,7 +77,7 @@ export default function ContactPage() {
                       </span>
                       <div>
                         <p className="font-semibold">Email</p>
-                        <a href="mailto:hello@hawahealthcare.com.au" className="text-brand-100 hover:text-foreground-inverse">hello@hawahealthcare.com.au</a>
+                        <a href={`mailto:${SITE.email}`} className="text-brand-100 hover:text-foreground-inverse">{SITE.email}</a>
                         <p className="mt-1 text-xs text-brand-100">Replies within 2-4 hours</p>
                       </div>
                     </li>

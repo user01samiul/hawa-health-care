@@ -28,9 +28,9 @@ export const SITE = {
     "disability support NSW",
     "support coordination",
   ],
-  phone: process.env.NEXT_PUBLIC_PHONE ?? "+61000000000",
-  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "(00) 0000 0000",
-  email: process.env.NEXT_PUBLIC_EMAIL ?? "office@alevenio.com",
+  phone: process.env.NEXT_PUBLIC_PHONE ?? "+61424788627",
+  phoneDisplay: process.env.NEXT_PUBLIC_PHONE_DISPLAY ?? "+61 424 788 627",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "Ahmad@hawahealthcare.com.au",
   socials: {
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",

@@ -8,6 +8,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import PageHero from "@/components/sections/PageHero";
 import FinalCta from "@/components/sections/FinalCta";
 import { SERVICES, getServiceBySlug } from "@/data/services";
+import { SITE } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -168,7 +169,7 @@ export default async function ServiceDetailPage({
                     Enquire now
                   </Link>
                   <a
-                    href="tel:+61000000000"
+                    href={`tel:${SITE.phone}`}
                     className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-pill)] border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
                   >
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -269,10 +270,10 @@ export default async function ServiceDetailPage({
                   Call us directly
                 </p>
                 <a
-                  href="tel:+61000000000"
+                  href={`tel:${SITE.phone}`}
                   className="mt-1 inline-block text-3xl font-bold tracking-tight text-primary hover:text-primary-hover sm:text-[2rem]"
                 >
-                  (00) 0000 0000
+                  {SITE.phoneDisplay}
                 </a>
                 <p className="mt-2 text-sm text-foreground-muted">
                   Mon–Fri, 9am–5pm AEST. Urgent referrals welcome.
