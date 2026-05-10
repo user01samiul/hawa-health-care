@@ -32,7 +32,7 @@ const PLAN_TYPES = [
 const FAQ = [
   {
     q: "Am I eligible for the NDIS?",
-    a: "You may be eligible if you're under 65, an Australian citizen / permanent resident / Protected SCV holder, and have a permanent disability that significantly affects your ability to do everyday activities. The NDIS website has the full criteria — and we're happy to walk you through it.",
+    a: "You may be eligible for the NDIS if you are under 65, live in Australia, and are an Australian citizen, permanent resident or Protected Special Category Visa holder. You must also have a permanent disability that substantially affects your ability to complete everyday activities.\n\nEligibility depends on your individual circumstances, so it is important to check the full criteria through the NDIS. Hawa Health Care can help explain the process and guide you through the next steps if you are unsure where to begin.",
   },
   {
     q: "How do I start with Hawa Health Care?",
@@ -202,7 +202,11 @@ export default function NdisInformationPage() {
                         </svg>
                       </span>
                     </summary>
-                    <p className="mt-4 text-sm leading-relaxed text-foreground-muted">{f.a}</p>
+                    <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground-muted">
+                      {f.a.split("\n\n").map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
                   </details>
                 </li>
               ))}
