@@ -4,6 +4,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PageHero from "@/components/sections/PageHero";
 import FinalCta from "@/components/sections/FinalCta";
+import FaqList from "@/components/sections/FaqList";
 
 export const metadata: Metadata = {
   title: "NDIS Information",
@@ -36,19 +37,19 @@ const FAQ = [
   },
   {
     q: "How do I start with Hawa Health Care?",
-    a: "Either call us, complete the contact form, or submit a referral. We'll confirm capacity in your suburb, send a clear service agreement, and book your first shift — often the same or next day.",
+    a: "Getting started is simple. Contact us by phone, online form or referral and our team will review your support needs, confirm local availability and guide you through the next steps. Where capacity is available, we can prepare your service agreement and arrange your first shift.",
   },
   {
     q: "Do you support self-managed and plan-managed participants?",
-    a: "Yes — both, plus NDIA-managed (we're a registered NDIS provider). Whichever way your plan is managed, we make the paperwork side painless.",
+    a: "Yes. We support participants across all three plan management types. Whether your plan is self managed, plan managed or NDIA managed, we will guide you through the process, explain what is needed and keep the paperwork clear and simple.",
   },
   {
     q: "What if I'm not happy with my support worker?",
-    a: "Tell us. We rematch quickly and confidentially — no awkward conversations on your end. Worker fit is one of the most important parts of NDIS support and we treat it that way.",
+    a: "You can speak with us at any time. The right worker match is an important part of quality support, and we take this seriously. If something is not working, we will listen to your concerns, respect your privacy and work with you to arrange a more suitable match.",
   },
   {
     q: "Can I switch from another provider?",
-    a: "Yes. We help with the changeover, including talking to your current provider if helpful. Most switches happen within a week.",
+    a: "Yes. If you are thinking about changing providers, we can guide you through the process and help make the transition clear and respectful. We can explain what to check in your current service agreement, discuss your support needs and arrange your new supports once everything is ready.",
   },
 ];
 
@@ -189,28 +190,7 @@ export default function NdisInformationPage() {
                 subtitle="If your question isn't answered here, ask away — we'll write back the same day."
               />
             </div>
-            <ul className="space-y-3 lg:col-span-8">
-              {FAQ.map((f) => (
-                <li key={f.q}>
-                  <details className="group rounded-[var(--radius-lg)] border border-border bg-background p-6 shadow-[var(--shadow-xs)] transition-colors hover:border-primary/40 [&_summary::-webkit-details-marker]:hidden">
-                    <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-foreground">
-                      {f.q}
-                      <span aria-hidden className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-primary-soft text-primary transition-transform duration-[var(--duration-base)] group-open:rotate-45">
-                        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 5v14" />
-                          <path d="M5 12h14" />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground-muted">
-                      {f.a.split("\n\n").map((para, i) => (
-                        <p key={i}>{para}</p>
-                      ))}
-                    </div>
-                  </details>
-                </li>
-              ))}
-            </ul>
+            <FaqList items={FAQ} />
           </div>
         </Container>
       </section>
