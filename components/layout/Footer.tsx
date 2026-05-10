@@ -61,9 +61,10 @@ export default function Footer() {
           <div className="md:col-span-4">
             <Logo imgClassName="h-20 w-auto md:h-24" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground-muted">
-              Tailored, participant-centred NDIS support across Western Sydney
-              and beyond. Same-day or next-day onboarding, with 7+ years of
-              healthcare experience behind every plan.
+              Hawa Health Care provides personalised NDIS support across
+              Western Sydney, with a focus on respectful care, reliable support
+              workers and clear communication with participants, families and
+              support coordinators.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-foreground-muted">
               <li className="flex items-start gap-3">
