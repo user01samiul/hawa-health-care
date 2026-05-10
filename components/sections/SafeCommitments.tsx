@@ -14,7 +14,7 @@ export default function SafeCommitments() {
   return (
     <section
       aria-labelledby="safe-commitments-heading"
-      className="relative isolate overflow-hidden bg-lime-accent text-foreground"
+      className="relative isolate overflow-hidden bg-brand-50 text-foreground"
     >
       <div
         aria-hidden
@@ -73,7 +73,7 @@ export default function SafeCommitments() {
                 <li key={p} className="flex items-start gap-3">
                   <span
                     aria-hidden
-                    className="mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-foreground text-lime-accent"
+                    className="mt-1 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-primary text-foreground-inverse"
                   >
                     <svg
                       viewBox="0 0 24 24"
