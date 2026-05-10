@@ -75,7 +75,7 @@ export default function AboutPage() {
         image="/tailored ndis.jpg"
         title={
           <>
-            Care that moves at your pace —{" "}
+            Care that moves at your pace,{" "}
             <span className="text-primary">starting today</span>.
           </>
         }

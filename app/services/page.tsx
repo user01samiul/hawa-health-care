@@ -26,7 +26,7 @@ export default function ServicesPage() {
             <span className="text-primary">One coordinated team</span>.
           </>
         }
-        subtitle="Every service below is delivered by support workers we've trained, matched, and back personally — with the same fast onboarding and clear communication across the board."
+        subtitle="Every service below is delivered by support workers we've trained, matched, and back personally, with the same fast onboarding and clear communication across the board."
       />
 
       <section className="py-20 md:py-28">

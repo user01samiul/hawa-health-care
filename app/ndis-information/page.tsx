@@ -65,7 +65,7 @@ export default function NdisInformationPage() {
             <span className="text-primary">use it well</span>.
           </>
         }
-        subtitle="A short, jargon-free guide to how the NDIS works, the three plan management types, and what we hear most often from new participants."
+        subtitle="A simple guide to understanding your NDIS plan, how funding is managed and the questions participants often ask when arranging support."
       />
 
       <section className="py-20 md:py-28">
