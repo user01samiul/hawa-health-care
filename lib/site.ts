@@ -12,7 +12,7 @@ export const SITE = {
   description:
     "Tailored, participant-centred NDIS support across Western Sydney. Same-day or next-day onboarding, 7+ years healthcare experience.",
   longDescription:
-    "Hawa Health Care is a registered NDIS service provider delivering fast, reliable, personalised support across Western Sydney and expanding NSW. We offer same-day or next-day onboarding, focus services in Social & Community Participation and Respite Support, and a participant-centred approach grounded in 7+ years of healthcare experience.",
+    "Hawa Health Care is a registered NDIS service provider delivering fast, reliable, personalised support across Western Sydney. We offer same-day or next-day onboarding, focus services in Social & Community Participation and Respite Support, and a participant-centred approach grounded in 7+ years of healthcare experience.",
   tagline: "Fast • Reliable • Personalised",
   keywords: [
     "NDIS provider",

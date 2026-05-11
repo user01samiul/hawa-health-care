@@ -39,7 +39,7 @@ export default function About() {
 
             <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border bg-background px-4 py-2.5 shadow-[var(--shadow-md)]">
               <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary sm:text-[11px]">
-                Western Sydney, expanding NSW
+                Western Sydney
               </p>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function About() {
 
               <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[var(--radius-pill)] border border-border bg-background px-4 py-2.5 shadow-[var(--shadow-md)]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-primary sm:text-[11px]">
-                  Western Sydney, expanding NSW
+                  Western Sydney
                 </p>
               </div>
             </div>

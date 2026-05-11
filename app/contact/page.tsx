@@ -90,7 +90,7 @@ export default function ContactPage() {
                       </span>
                       <div>
                         <p className="font-semibold">Service area</p>
-                        <p className="text-brand-100">Western Sydney - expanding across NSW</p>
+                        <p className="text-brand-100">Western Sydney</p>
                       </div>
                     </li>
                   </ul>
