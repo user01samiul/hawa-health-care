@@ -139,14 +139,16 @@ export default function WhyUs() {
                     <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-100">
                       Experience
                     </dt>
-                    <dd className="mt-1 text-3xl font-bold tracking-tight">7+ yrs</dd>
+                    <dd className="mt-1 text-base font-semibold leading-tight">
+                      7+ years in healthcare and support
+                    </dd>
                   </div>
                   <div>
                     <dt className="text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-100">
-                      Onboarding
+                      Care approach
                     </dt>
-                    <dd className="mt-1 text-3xl font-bold tracking-tight">
-                      &lt;24h
+                    <dd className="mt-1 text-base font-semibold leading-tight">
+                      Personalised support planning
                     </dd>
                   </div>
                   <div>
@@ -154,7 +156,7 @@ export default function WhyUs() {
                       Coverage
                     </dt>
                     <dd className="mt-1 text-base font-semibold leading-tight">
-                      Western Sydney <span className="text-brand-100">+ NSW</span>
+                      Western Sydney and surrounding areas
                     </dd>
                   </div>
                   <div>
@@ -162,7 +164,7 @@ export default function WhyUs() {
                       Plan types
                     </dt>
                     <dd className="mt-1 text-base font-semibold leading-tight">
-                      Self · Plan · NDIA
+                      Self managed, plan managed and NDIA managed
                     </dd>
                   </div>
                 </dl>
