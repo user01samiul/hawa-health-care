@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedStats from "@/components/ui/AnimatedStats";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -101,50 +100,39 @@ export default function WhoWeHelp() {
               eyebrow="Who we help"
               title={
                 <>
-                  Built for everyone who shapes a{" "}
-                  <span className="text-primary">participant&apos;s plan</span>.
+                  Helping participants, families and support teams{" "}
+                  <span className="text-primary">feel more confident</span>.
                 </>
               }
-              subtitle="Whether you're living with the plan, supporting someone who is, or coordinating it on their behalf, we make your part easier."
+              subtitle="We work with participants, families, carers and support coordinators to arrange NDIS support that is practical, respectful and shaped around the person's daily life."
             />
 
-            <AnimatedStats
-              className="mt-8"
-              stats={[
-                {
-                  value: 3,
-                  label: (
-                    <>
-                      Audiences we
-                      <br />
-                      partner with
-                    </>
-                  ),
-                },
-                {
-                  value: 24,
-                  suffix: "h",
-                  label: (
-                    <>
-                      Service agreements
-                      <br />
-                      turnaround
-                    </>
-                  ),
-                },
-                {
-                  value: 7,
-                  suffix: "+",
-                  label: (
-                    <>
-                      Years in
-                      <br />
-                      healthcare
-                    </>
-                  ),
-                },
-              ]}
-            />
+            <dl className="mt-8 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                  Participants
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Support built around individual goals
+                </dd>
+              </div>
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                  Families
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Clear communication and peace of mind
+                </dd>
+              </div>
+              <div className="border-l-2 border-brand-200 pl-3 sm:pl-4">
+                <dt className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                  Coordinators
+                </dt>
+                <dd className="mt-1 text-xs leading-snug text-foreground-subtle sm:text-sm">
+                  Simple referrals and responsive follow up
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <div className="relative hidden lg:col-span-5 lg:block">
