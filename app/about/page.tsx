@@ -59,11 +59,11 @@ const STATS = [
 ];
 
 const PROMISE = [
-  "Support shaped around individual goals",
-  "A real person to speak with",
-  "Clear service agreements",
-  "Consistent communication",
-  "Matched, respectful support workers",
+  "Support shaped around goals and daily routines",
+  "A clear contact person who understands your situation",
+  "Service agreements explained in simple language",
+  "Regular updates for families and support coordinators",
+  "Respectful support workers matched to participant needs",
 ];
 
 export default function AboutPage() {
