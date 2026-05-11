@@ -120,17 +120,18 @@ export default function WhyUs() {
                 </span>
 
                 <p className="mt-6 text-balance text-3xl font-bold leading-[1.05] tracking-tight md:text-[2.6rem]">
-                  Fast.
+                  Reliable care.
                   <br />
-                  Reliable.
+                  Clear communication.
                   <br />
-                  <span className="text-secondary">Personalised.</span>
+                  <span className="text-secondary">Support built around you.</span>
                 </p>
 
                 <p className="mt-6 max-w-md text-sm leading-relaxed text-brand-100 md:text-base">
-                  If we can&apos;t deliver on this promise for a participant,
-                  we&apos;ll be the first to tell you, and we&apos;ll help find
-                  the right alternative.
+                  We take the time to understand each participant&apos;s needs,
+                  routines and goals before support begins. If we are not the
+                  right fit, or if we do not have the right capacity, we will
+                  be upfront and help guide you toward the next best option.
                 </p>
 
                 <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/15 pt-6">
