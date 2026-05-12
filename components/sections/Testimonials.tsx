@@ -74,16 +74,6 @@ export default function Testimonials() {
         />
 
         <TestimonialsCarousel items={TESTIMONIALS} />
-
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground-subtle">
-          <span>NDIS Registered</span>
-          <span aria-hidden className="h-1 w-1 rounded-full bg-border-strong" />
-          <span>7+ Years Healthcare</span>
-          <span aria-hidden className="h-1 w-1 rounded-full bg-border-strong" />
-          <span>Western Sydney</span>
-          <span aria-hidden className="h-1 w-1 rounded-full bg-border-strong" />
-          <span>Same-day Onboarding</span>
-        </div>
       </Container>
     </section>
   );
