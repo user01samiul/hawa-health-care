@@ -30,8 +30,7 @@ const AUDIENCES = [
     points: [
       "Same-day onboarding for urgent need",
       "Familiar, vetted support workers",
-      "Clear, simple communication",
-      "We talk straight, no jargon",
+      "Easy to understand updates",
     ],
     icon: (
       <>
