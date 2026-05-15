@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx tsc *)",
       "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\Sami\\\\Desktop\\\\projects\\\\hawa-health-care\\\\public\\\\logo\\\\logo-transparent.png\"\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\); $fav = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\Sami\\\\Desktop\\\\projects\\\\hawa-health-care\\\\public\\\\logo\\\\favicon.png\"\\); \"$\\($fav.Width\\)x$\\($fav.Height\\)\"; $fav.Dispose\\(\\))",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "Bash(npm install *)"
     ]
   }
 }
