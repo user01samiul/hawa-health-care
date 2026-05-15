@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
+import Turnstile, { type TurnstileHandle } from "@/components/forms/Turnstile";
 
 const DEFAULT_TOPIC_OPTIONS = [
   "Starting NDIS supports",
@@ -64,6 +65,9 @@ export default function ContactForm({
     : [defaultTopic, ...topicOptions].filter(Boolean);
 
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const turnstileRef = useRef<TurnstileHandle | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -71,12 +75,22 @@ export default function ContactForm({
 
     const formEl = event.currentTarget;
     const formData = new FormData(formEl);
+
+    if (turnstileSiteKey && !turnstileToken) {
+      setStatus({
+        kind: "error",
+        message: "Please complete the anti-spam check below.",
+      });
+      return;
+    }
+
     const payload = {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       topic: String(formData.get("topic") ?? ""),
       message: String(formData.get("message") ?? ""),
+      turnstileToken,
     };
 
     setStatus({ kind: "submitting" });
@@ -94,16 +108,22 @@ export default function ContactForm({
           kind: "error",
           message: data.error ?? "Something went wrong. Please try again.",
         });
+        turnstileRef.current?.reset();
+        setTurnstileToken("");
         return;
       }
 
       setStatus({ kind: "success" });
       formEl.reset();
+      turnstileRef.current?.reset();
+      setTurnstileToken("");
     } catch {
       setStatus({
         kind: "error",
         message: "Network error. Please check your connection and try again.",
       });
+      turnstileRef.current?.reset();
+      setTurnstileToken("");
     }
   }
 
@@ -186,6 +206,18 @@ export default function ContactForm({
           placeholder={messagePlaceholder}
         />
       </div>
+
+      {turnstileSiteKey ? (
+        <div>
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={turnstileSiteKey}
+            onToken={setTurnstileToken}
+            onError={() => setTurnstileToken("")}
+            action="contact"
+          />
+        </div>
+      ) : null}
 
       {status.kind === "success" ? (
         <div

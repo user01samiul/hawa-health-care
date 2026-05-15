@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { escapeHtml, sendMail } from "@/lib/mailer";
 import { SERVICES } from "@/data/services";
+import { getRemoteIp, verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -19,6 +20,7 @@ type ReferralPayload = {
   services?: unknown;
   notes?: string;
   consent?: unknown;
+  turnstileToken?: string;
 };
 
 function str(value: unknown): string {
@@ -78,6 +80,14 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
+  }
+
+  const verification = await verifyTurnstile(body.turnstileToken, getRemoteIp(request));
+  if (!verification.ok) {
+    return NextResponse.json(
+      { error: "Please complete the anti-spam check and try again." },
+      { status: 400 },
+    );
   }
 
   const isUrgent = urgency === "urgent";

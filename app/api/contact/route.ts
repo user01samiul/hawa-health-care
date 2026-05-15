@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { escapeHtml, sendMail } from "@/lib/mailer";
+import { getRemoteIp, verifyTurnstile } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -10,6 +11,7 @@ type ContactPayload = {
   phone?: string;
   topic?: string;
   message?: string;
+  turnstileToken?: string;
 };
 
 function str(value: unknown): string {
@@ -41,6 +43,14 @@ export async function POST(request: Request) {
   if (!emailLooksValid) {
     return NextResponse.json(
       { error: "Please provide a valid email address." },
+      { status: 400 },
+    );
+  }
+
+  const verification = await verifyTurnstile(body.turnstileToken, getRemoteIp(request));
+  if (!verification.ok) {
+    return NextResponse.json(
+      { error: "Please complete the anti-spam check and try again." },
       { status: 400 },
     );
   }

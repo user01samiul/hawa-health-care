@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import { SERVICES } from "@/data/services";
+import Turnstile, { type TurnstileHandle } from "@/components/forms/Turnstile";
 
 const PLAN_TYPES = ["Self-managed", "Plan-managed", "NDIA-managed"] as const;
 
@@ -43,6 +44,9 @@ type Status =
 
 export default function ReferralForm() {
   const [status, setStatus] = useState<Status>({ kind: "idle" });
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const turnstileRef = useRef<TurnstileHandle | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -50,6 +54,14 @@ export default function ReferralForm() {
 
     const formEl = event.currentTarget;
     const formData = new FormData(formEl);
+
+    if (turnstileSiteKey && !turnstileToken) {
+      setStatus({
+        kind: "error",
+        message: "Please complete the anti-spam check below.",
+      });
+      return;
+    }
 
     const payload = {
       participantName: String(formData.get("participantName") ?? ""),
@@ -65,6 +77,7 @@ export default function ReferralForm() {
       services: formData.getAll("services").map((v) => String(v)),
       notes: String(formData.get("notes") ?? ""),
       consent: formData.get("consent") === "on",
+      turnstileToken,
     };
 
     setStatus({ kind: "submitting" });
@@ -82,16 +95,22 @@ export default function ReferralForm() {
           kind: "error",
           message: data.error ?? "Something went wrong. Please try again.",
         });
+        turnstileRef.current?.reset();
+        setTurnstileToken("");
         return;
       }
 
       setStatus({ kind: "success" });
       formEl.reset();
+      turnstileRef.current?.reset();
+      setTurnstileToken("");
     } catch {
       setStatus({
         kind: "error",
         message: "Network error. Please check your connection and try again.",
       });
+      turnstileRef.current?.reset();
+      setTurnstileToken("");
     }
   }
 
@@ -294,6 +313,18 @@ export default function ReferralForm() {
           I have consent from the participant (or am the participant) to share these details with Hawa Health Care for the purpose of arranging supports.
         </span>
       </label>
+
+      {turnstileSiteKey ? (
+        <div>
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={turnstileSiteKey}
+            onToken={setTurnstileToken}
+            onError={() => setTurnstileToken("")}
+            action="referral"
+          />
+        </div>
+      ) : null}
 
       {status.kind === "success" ? (
         <div
