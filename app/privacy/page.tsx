@@ -17,21 +17,6 @@ export const metadata: Metadata = {
 
 const LAST_UPDATED = "20 May 2026";
 
-const SECTIONS = [
-  { id: "scope", label: "Scope" },
-  { id: "what-we-collect", label: "What we collect" },
-  { id: "how-we-collect", label: "How we collect it" },
-  { id: "why-we-collect", label: "Why we collect it" },
-  { id: "disclosure", label: "Sharing & disclosure" },
-  { id: "cookies", label: "Cookies & analytics" },
-  { id: "third-parties", label: "Third-party services" },
-  { id: "storage", label: "Storage & security" },
-  { id: "your-rights", label: "Your rights" },
-  { id: "complaints", label: "Complaints" },
-  { id: "changes", label: "Changes to this policy" },
-  { id: "contact", label: "Contact us" },
-];
-
 export default function PrivacyPolicyPage() {
   return (
     <>
@@ -50,36 +35,12 @@ export default function PrivacyPolicyPage() {
 
       <section className="py-20 md:py-28">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <aside className="lg:col-span-4">
-              <div className="sticky top-28 rounded-[var(--radius-lg)] border border-border bg-surface p-7 shadow-[var(--shadow-xs)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  On this page
-                </p>
-                <nav aria-label="Privacy policy sections" className="mt-5">
-                  <ol className="space-y-2.5 text-sm">
-                    {SECTIONS.map((s, i) => (
-                      <li key={s.id} className="flex items-baseline gap-3">
-                        <span className="text-xs font-semibold text-foreground-subtle">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <a
-                          href={`#${s.id}`}
-                          className="font-medium text-foreground hover:text-primary"
-                        >
-                          {s.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ol>
-                </nav>
-                <p className="mt-7 border-t border-border pt-5 text-xs text-foreground-subtle">
-                  Last updated: <span className="font-medium text-foreground">{LAST_UPDATED}</span>
-                </p>
-              </div>
-            </aside>
-
-            <article className="lg:col-span-8">
+          <div className="mx-auto max-w-3xl">
+            <article>
+              <p className="mb-6 text-xs uppercase tracking-[0.18em] text-foreground-subtle">
+                Last updated:{" "}
+                <span className="font-semibold text-foreground">{LAST_UPDATED}</span>
+              </p>
               <SectionHeading
                 eyebrow="Privacy policy"
                 title={
@@ -439,6 +400,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </Container>
       </section>
+
 
       <FinalCta />
     </>
